@@ -1,7 +1,9 @@
 import React from "react";
 
+import Navbar from "./components/Navbar/Navbar";
+
 const app = () => {
-  return <div>Hello</div>;
+  return <Navbar />;
 };
 
 export default app;
