@@ -1,9 +1,5 @@
 .Navbar {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   width: 300px;
   height: 100vh;
   background: #262626;
