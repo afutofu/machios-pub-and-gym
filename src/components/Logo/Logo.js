@@ -6,7 +6,7 @@ import armIcon from "../../assets/icons/arm.png";
 const logo = () => {
   return (
     <div className={classes.Logo}>
-      <img src={armIcon} width={50} height={50} />
+      <img src={armIcon} width={70} height={70} alt="" />
       <h1>MACHO'S</h1>
       <p>PUB & GYM</p>
     </div>
