@@ -1,17 +1,16 @@
 import React from "react";
 
 import classes from "./NavigationItems.module.css";
+import NavigationItem from "./NavigationItem/NavigationItem";
 
-const navigationItems = () => {
-  return (
-    <div className={classes.NavigationItems}>
-      <a>MENU</a>
-      <a>GYM</a>
-      <a>ABOUT</a>
-      <a>GALLERY</a>
-      <a>CONTACT</a>
-    </div>
-  );
+const navigationItems = props => {
+  const renderItems = () => {
+    return props.items.map(itemName => {
+      return <NavigationItem key={itemName} name={itemName} />;
+    });
+  };
+
+  return <div className={classes.NavigationItems}>{renderItems()}</div>;
 };
 
 export default navigationItems;
