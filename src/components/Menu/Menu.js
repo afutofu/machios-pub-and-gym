@@ -17,7 +17,7 @@ const menu = () => {
           </p>
         </div>
 
-        <h5 className={classes.MenuSection}>ENTRANCES</h5>
+        <p className={classes.MenuSection}>ENTRANCES</p>
         <hr />
       </div>
     </div>
