@@ -1,4 +1,5 @@
 .Menu {
+  position: relative;
   width: 100%;
   background-color: #ffe9e9;
   padding: 75px 0;

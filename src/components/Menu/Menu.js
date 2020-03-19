@@ -3,12 +3,14 @@ import React from "react";
 import classes from "./Menu.module.css";
 
 import SectionHeader from "../SectionHeader/SectionHeader";
+import MenuChanger from "./MenuChanger/MenuChanger";
 import MenuSection from "./MenuSection/MenuSection";
 
 const menu = () => {
   return (
     <div className={classes.Menu}>
       <SectionHeader title="menu" />
+      <MenuChanger />
       <div className={classes.Container}>
         <p>Available every weekends</p>
         <div className={classes.Close}>

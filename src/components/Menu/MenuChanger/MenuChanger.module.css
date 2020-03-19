@@ -1,0 +1,17 @@
+.MenuChanger {
+  position: absolute;
+  top: 0;
+  color: black;
+  background: white;
+  height: 100%;
+  width: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.MenuChanger .Options {
+  display: flex;
+  writing-mode: vertical-lr;
+  letter-spacing: 0.5rem;
+  font-size: 0.8rem;
+  transform: rotate(180deg);
+}
