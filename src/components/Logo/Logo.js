@@ -7,8 +7,8 @@ const logo = () => {
   return (
     <div className={classes.Logo}>
       <img src={armIcon} width={70} height={70} alt="" />
-      <h1>MACHO'S</h1>
-      <p>PUB & GYM</p>
+      <h1 className={classes.Title}>MACHO'S</h1>
+      <p className={classes.Type}>PUB & GYM</p>
     </div>
   );
 };

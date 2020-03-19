@@ -9,7 +9,16 @@ const menu = () => {
     <div className={classes.Menu}>
       <SectionHeader title="menu" />
       <div className={classes.Container}>
-        <h6>Available every day bruhhh</h6>
+        <p>Available every weekends</p>
+        <div className={classes.Close}>
+          <p>Pub opens at 8 a.m. and closes at 12 p.m.</p>
+          <p>
+            Visit the blackboard in the main hall to check discounted items.
+          </p>
+        </div>
+
+        <h5 className={classes.MenuSection}>ENTRANCES</h5>
+        <hr />
       </div>
     </div>
   );

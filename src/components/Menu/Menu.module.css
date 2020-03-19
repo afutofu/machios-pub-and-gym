@@ -1,12 +1,27 @@
 .Menu {
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #ffe9e9;
-  padding-top: 75px;
+  padding: 75px 0;
 }
 
 .Container {
   width: 100%;
   height: 100%;
-  padding: 0 0;
+  box-sizing: border-box;
+  padding: 0 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+.Container p {
+  padding-bottom: 30px;
+}
+
+.Container .Close p {
+  padding-bottom: 0px;
+  line-height: 0.5rem;
+}
+
+.Container .Close {
+  padding-bottom: 30px;
 }
