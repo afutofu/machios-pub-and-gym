@@ -13,11 +13,11 @@ const menu = () => {
         <p>Available every weekends</p>
         <div className={classes.Close}>
           <p>Pub opens at 8 a.m. and closes at 12 p.m.</p>
-          <p>
-            Visit the blackboard in the main hall to check discounted items.
-          </p>
+          <p>Visit the blackboard in the main hall to check discounted items</p>
         </div>
-        <MenuSection title="entrances" />
+        <MenuSection title="entrances" items={6} />
+        <MenuSection title="dishes" items={9} />
+        <MenuSection title="dessert" items={3} />
       </div>
     </div>
   );

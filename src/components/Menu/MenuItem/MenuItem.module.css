@@ -1,8 +1,8 @@
 .MenuItem {
-  margin-bottom: 50px;
-  width: 33%;
+  margin-bottom: 30px;
+  width: 30%;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .NamePrice {
@@ -16,6 +16,7 @@
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+  font-size: 0.95rem;
 }
 
 .Price {
