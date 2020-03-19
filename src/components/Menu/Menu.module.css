@@ -20,11 +20,3 @@
 .Container .Close {
   padding: 30px 0px;
 }
-
-.MenuSection {
-  letter-spacing: 0.2rem;
-}
-
-.Container hr {
-  border-top: 1px solid rgba(0, 0, 0, 0.4);
-}

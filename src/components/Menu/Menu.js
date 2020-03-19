@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./Menu.module.css";
 
 import SectionHeader from "../SectionHeader/SectionHeader";
-import MenuItem from "./MenuItem/MenuItem";
+import MenuSection from "./MenuSection/MenuSection";
 
 const menu = () => {
   return (
@@ -17,24 +17,7 @@ const menu = () => {
             Visit the blackboard in the main hall to check discounted items.
           </p>
         </div>
-
-        <p className={classes.MenuSection}>ENTRANCES</p>
-        <hr />
-        <MenuItem
-          name="lorem"
-          price="5"
-          desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."
-        />
-        <MenuItem
-          name="lorem"
-          price="5"
-          desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."
-        />
-        <MenuItem
-          name="lorem"
-          price="5"
-          desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."
-        />
+        <MenuSection title="entrances" />
       </div>
     </div>
   );
