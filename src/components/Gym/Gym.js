@@ -8,7 +8,7 @@ import gym1 from "../../assets/images/gym1.jpg";
 
 const gym = () => {
   return (
-    <div className={classes.Gym}>
+    <div id="gym" className={classes.Gym}>
       <SectionHeader title="gym" />
       <div className={classes.Container}>
         <p className={classes.Available}>Available every day of the week</p>

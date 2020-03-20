@@ -8,7 +8,7 @@ import MenuSection from "./MenuSection/MenuSection";
 
 const menu = () => {
   return (
-    <div className={classes.Menu}>
+    <div id="menu" className={classes.Menu}>
       <SectionHeader title="menu" />
       <MenuChanger />
       <div className={classes.Container}>
