@@ -1,0 +1,27 @@
+.Gym {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  padding: 75px 0;
+}
+
+.Container {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 100px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+}
+
+.Container .Available {
+  padding-bottom: 30px;
+}
+
+.Container .Close p {
+  line-height: 1.6rem;
+}
+
+.Container .Close {
+  padding-bottom: 30px;
+}
