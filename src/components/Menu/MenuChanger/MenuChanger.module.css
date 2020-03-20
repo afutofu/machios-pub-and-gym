@@ -9,9 +9,16 @@
 }
 
 .MenuChanger .Options {
+  position: sticky;
   display: flex;
   writing-mode: vertical-lr;
-  letter-spacing: 0.5rem;
-  font-size: 0.8rem;
+  letter-spacing: 0.3rem;
+  font-size: 0.9rem;
+  left: 302px;
+  top: 20%;
   transform: rotate(180deg);
+}
+
+.MenuChanger .Options p {
+  height: 100px;
 }
