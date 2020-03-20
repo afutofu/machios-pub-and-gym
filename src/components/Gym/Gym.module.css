@@ -15,7 +15,7 @@
 }
 
 .Container .Available {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .Container .Close p {
@@ -23,5 +23,20 @@
 }
 
 .Container .Close {
-  padding-bottom: 30px;
+  padding: 30px 0;
+}
+
+.Gym .GymGallery {
+  width: 100%;
+  height: 55vh;
+  background-image: url("../../assets/images/gym1.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.Gym .GymGallery .Transparent {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
 }
