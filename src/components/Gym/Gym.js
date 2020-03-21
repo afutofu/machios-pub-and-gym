@@ -3,8 +3,7 @@ import React from "react";
 import classes from "./Gym.module.css";
 
 import SectionHeader from "../SectionHeader/SectionHeader";
-
-import gym1 from "../../assets/images/gym1.jpg";
+import Card from "../Card/Card";
 
 const gym = () => {
   return (
@@ -17,10 +16,9 @@ const gym = () => {
           <p>Trainers available from 9 a.m. to 6 p.m.</p>
         </div>
       </div>
-      <div className={classes.GymGallery}>
-        <div className={classes.Transparent}></div>
-      </div>
+
       <div className={classes.Container}>
+        <hr />
         <div className={classes.Close}>
           <div className={classes.GymContent}>
             <h3>THE MACHO'S GYM FITNESS EXPERIENCE</h3>
@@ -36,6 +34,10 @@ const gym = () => {
           </div>
         </div>
       </div>
+      <div className={classes.GymGallery}>
+        <div className={classes.Transparent}></div>
+      </div>
+      <div className={classes.Container}></div>
     </div>
   );
 };
