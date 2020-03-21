@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./Gym.module.css";
 
 import SectionHeader from "../SectionHeader/SectionHeader";
-import Card from "../Card/Card";
+import CardSection from "../CardSection/CardSection";
 
 const gym = () => {
   return (
@@ -37,7 +37,7 @@ const gym = () => {
       <div className={classes.GymGallery}>
         <div className={classes.Transparent}></div>
       </div>
-      <div className={classes.Container}></div>
+      <CardSection cards={3} />
     </div>
   );
 };
