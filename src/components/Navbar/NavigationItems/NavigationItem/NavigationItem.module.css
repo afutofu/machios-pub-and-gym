@@ -6,3 +6,7 @@
   letter-spacing: 0.3rem;
   text-decoration: none;
 }
+
+.NavigationItem:hover {
+  color: #ff6767;
+}
