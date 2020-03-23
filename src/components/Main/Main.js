@@ -5,6 +5,7 @@ import classes from "./Main.module.css";
 import ImageSlider from "../ImageSlider/ImageSlider";
 import Menu from "../Menu/Menu";
 import Gym from "../Gym/Gym";
+import About from "../About/About";
 
 const main = () => {
   return (
@@ -12,6 +13,7 @@ const main = () => {
       <ImageSlider />
       <Menu />
       <Gym />
+      <About />
     </div>
   );
 };
