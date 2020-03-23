@@ -7,7 +7,7 @@ import CardSection from "../CardSection/CardSection";
 
 const gym = () => {
   return (
-    <div id="gym" className={classes.Gym}>
+    <section id="gym" className={classes.Gym}>
       <SectionHeader title="gym" />
       <div className={classes.Container}>
         <p className={classes.Available}>Available every day of the week</p>
@@ -38,7 +38,7 @@ const gym = () => {
         <div className={classes.Transparent}></div>
       </div>
       <CardSection cards={3} />
-    </div>
+    </section>
   );
 };
 

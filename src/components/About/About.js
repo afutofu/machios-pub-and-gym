@@ -7,7 +7,7 @@ import gym2 from "../../assets/images/gym2.jpg";
 
 const about = () => {
   return (
-    <div id="about" className={classes.About}>
+    <section id="about" className={classes.About}>
       <div className={classes.Container}>
         <h1 className={classes.Title}>
           We serve the best, for the best, by the best
@@ -36,7 +36,7 @@ const about = () => {
           <img src={gym2}></img>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

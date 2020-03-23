@@ -8,7 +8,7 @@ import MenuSection from "./MenuSection/MenuSection";
 
 const menu = () => {
   return (
-    <div id="menu" className={classes.Menu}>
+    <section id="menu" className={classes.Menu}>
       <SectionHeader title="menu" />
       <MenuChanger />
       <div className={classes.Container}>
@@ -21,7 +21,7 @@ const menu = () => {
         <MenuSection title="dishes" items={9} />
         <MenuSection title="dessert" items={3} />
       </div>
-    </div>
+    </section>
   );
 };
 
