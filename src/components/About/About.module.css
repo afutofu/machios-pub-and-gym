@@ -1,6 +1,5 @@
 .About {
   width: 100%;
-  padding: 75px 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #ffe9e9;
   display: flex;
@@ -18,11 +17,15 @@
 }
 
 .Title {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
   margin-bottom: 100px;
 }
 
 .Pair {
-  margin-bottom: 100px;
+  margin-bottom: 500px;
 }
 
 .Pair:nth-of-type(odd) {
