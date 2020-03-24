@@ -6,9 +6,9 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 
 const contact = () => {
   return (
-    <div className={classes.Contact}>
+    <section id="contact" className={classes.Contact}>
       <SectionHeader title="contact" />
-    </div>
+    </section>
   );
 };
 

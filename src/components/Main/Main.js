@@ -6,6 +6,7 @@ import ImageSlider from "../ImageSlider/ImageSlider";
 import Menu from "../Menu/Menu";
 import Gym from "../Gym/Gym";
 import About from "../About/About";
+import Gallery from "../Gallery/Gallery";
 import Contact from "../Contact/Contact";
 
 const main = () => {
@@ -15,6 +16,7 @@ const main = () => {
       <Menu />
       <Gym />
       <About />
+      <Gallery />
       <Contact />
     </div>
   );
