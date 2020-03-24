@@ -6,6 +6,7 @@ import ImageSlider from "../ImageSlider/ImageSlider";
 import Menu from "../Menu/Menu";
 import Gym from "../Gym/Gym";
 import About from "../About/About";
+import Contact from "../Contact/Contact";
 
 const main = () => {
   return (
@@ -14,6 +15,7 @@ const main = () => {
       <Menu />
       <Gym />
       <About />
+      <Contact />
     </div>
   );
 };
