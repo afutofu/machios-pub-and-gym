@@ -1,4 +1,5 @@
 .Gallery {
+  position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -10,37 +11,84 @@
   display: flex;
 }
 
+.Navigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.Bar {
+  width: 50px;
+  height: 10px;
+  border: 2px solid #fff;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.Bar:hover {
+  background: #fff;
+}
+
+.Slides input[name="r"] {
+  position: absolute;
+  visibility: hidden;
+}
+
 .Slide {
   width: 20%;
   height: 100%;
+  transition: 0.6s;
 }
 
-.Image {
+.Image1,
+.Image2,
+.Image3,
+.Image4,
+.Image5 {
   width: 100%;
   height: 100%;
-}
-
-.Image:nth-of-type(1) {
-  background-image: url("../../assets/images/pub2.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.Image:nth-of-type(2) {
+.Image1 {
+  background-image: url("../../assets/images/pub2.jpg");
+}
+
+.Image2 {
   background-image: url("../../assets/images/gym3.jpg");
-  background-size: cover;
 }
 
-.Image:nth-of-type(3) {
-  background-image: url("../../assets/images/pub2.jpg");
-  background-size: cover;
+.Image3 {
+  background-image: url("../../assets/images/pub3.jpg");
 }
 
-.Image:nth-of-type(4) {
-  background-image: url("../../assets/images/pub2.jpg");
-  background-size: cover;
+.Image4 {
+  background-image: url("../../assets/images/gym4.jpg");
 }
 
-.Image:nth-of-type(5) {
-  background-image: url("../../assets/images/pub2.jpg");
-  background-size: cover;
+.Image5 {
+  background-image: url("../../assets/images/pub4.jpg");
+}
+
+.Slides .R1:checked ~ .FirstSlide {
+  margin-left: 0;
+}
+
+.Slides .R2:checked ~ .FirstSlide {
+  margin-left: -20%;
+}
+
+.Slides .R3:checked ~ .FirstSlide {
+  margin-left: -40%;
+}
+
+.Slides .R4:checked ~ .FirstSlide {
+  margin-left: -60%;
+}
+
+.Slides .R5:checked ~ .FirstSlide {
+  margin-left: -80%;
 }
