@@ -11,4 +11,5 @@
 
 .NavigationItem:hover {
   color: #ff6767;
+  cursor: pointer;
 }
