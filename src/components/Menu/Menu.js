@@ -44,13 +44,13 @@ class Menu extends Component {
         <MenuChanger setFoodCategory={this.setFoodCategory} />
         <div className={classes.Container}>
           <p>Available every weekends</p>
-          <div className={classes.Close}>
+          <div id="menuStart" className={classes.Close}>
             <p>Pub opens at 8 a.m. and closes at 11 p.m.</p>
             <p>
               Visit the blackboard in the main hall to check discounted items
             </p>
           </div>
-          <div id="menuStart">{this.renderMenu()}</div>
+          {this.renderMenu()}
         </div>
       </section>
     );
