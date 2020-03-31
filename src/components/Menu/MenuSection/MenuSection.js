@@ -10,6 +10,7 @@ const menuSection = props => {
     for (let i = 0; i < props.items; i++) {
       menuItems.push(
         <MenuItem
+          key={i}
           name="lorem"
           price="5"
           desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."

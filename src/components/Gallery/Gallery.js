@@ -34,11 +34,11 @@ const gallery = () => {
       </div>
 
       <div className={classes.Navigation}>
-        <label for="r1" className={classes.Bar}></label>
-        <label for="r2" className={classes.Bar}></label>
-        <label for="r3" className={classes.Bar}></label>
-        <label for="r4" className={classes.Bar}></label>
-        <label for="r5" className={classes.Bar}></label>
+        <label htmlFor="r1" className={classes.Bar}></label>
+        <label htmlFor="r2" className={classes.Bar}></label>
+        <label htmlFor="r3" className={classes.Bar}></label>
+        <label htmlFor="r4" className={classes.Bar}></label>
+        <label htmlFor="r5" className={classes.Bar}></label>
       </div>
     </section>
   );

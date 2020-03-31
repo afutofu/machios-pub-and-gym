@@ -10,6 +10,7 @@ const cardSection = props => {
     for (let i = 0; i < props.cards; i++) {
       cards.push(
         <Card
+          key={i}
           title="lorem"
           desc="Culpa duis excepteur aliqua consectetur officia et eiusmod officia cillum sunt eu laborum aliqua et."
         />
