@@ -37,7 +37,6 @@ class Menu extends Component {
   };
 
   render() {
-    console.log(this.state.foodCategory);
     return (
       <section id="menu" className={classes.Menu}>
         <SectionHeader title="menu" />
