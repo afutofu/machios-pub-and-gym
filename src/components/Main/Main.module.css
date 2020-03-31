@@ -1,5 +1,22 @@
 .Main {
   height: 100vh;
-  margin-left: 300px;
   background-color: white;
+  overflow: hidden;
+  animation-name: start;
+  animation-duration: 1s;
+  animation-delay: 2.3s;
+  animation-fill-mode: forwards;
+}
+
+.Margin {
+  margin-left: 300px;
+}
+
+@keyframes start {
+  from {
+    overflow: hidden;
+  }
+  to {
+    overflow: visible;
+  }
 }

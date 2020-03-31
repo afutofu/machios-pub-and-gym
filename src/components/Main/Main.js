@@ -13,11 +13,13 @@ const main = () => {
   return (
     <div className={classes.Main}>
       <ImageSlider />
-      <Menu />
-      <Gym />
-      <About />
-      <Gallery />
-      <Contact />
+      <div className={classes.Margin}>
+        <Menu />
+        <Gym />
+        <About />
+        <Gallery />
+        <Contact />
+      </div>
     </div>
   );
 };

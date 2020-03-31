@@ -9,7 +9,6 @@ const navigationItem = props => {
     <Link
       className={classes.NavigationItem}
       to={`${props.to}`}
-      spy={true}
       smooth={true}
       duration={1000}
     >
