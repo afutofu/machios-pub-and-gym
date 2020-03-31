@@ -8,6 +8,8 @@
   margin: 100px 0;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
+  opacity: 0;
+  animation: fadeIn 2s 2s ease forwards;
 }
 
 .Logo:hover {
@@ -28,4 +30,13 @@
   color: #ff6767;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
