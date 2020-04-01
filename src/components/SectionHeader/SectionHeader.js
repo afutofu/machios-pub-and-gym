@@ -30,13 +30,13 @@ class sectionHeader extends Component {
       if (this.state.onScreen) {
         return (
           <div className={classes.SlideInSectionHeader} ref={this.myRef}>
-            {this.props.title}
+            <p>{this.props.title}</p>
           </div>
         );
       } else {
         return (
           <div className={classes.SlideOutSectionHeader} ref={this.myRef}>
-            {this.props.title}
+            <p>{this.props.title}</p>
           </div>
         );
       }
