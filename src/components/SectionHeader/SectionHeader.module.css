@@ -1,4 +1,20 @@
-.SectionHeader {
+.SlideOutSectionHeader {
+  height: 75px;
+  padding-left: 100px;
+  margin-bottom: 75px;
+  background-color: #262626;
+  color: white;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.3rem;
+  animation: slideOut 2s 0s forwards;
+  animation-timing-function: cubic-bezier(0.18, 0.82, 0.3, 0.98);
+}
+
+.SlideInSectionHeader {
   height: 75px;
   padding-left: 100px;
   margin-bottom: 75px;
@@ -11,7 +27,8 @@
   align-items: center;
   letter-spacing: 0.3rem;
   transform: translateX(-100%);
-  animation: slideIn 1.5s 1s ease-out forwards;
+  animation: slideIn 2s 0s forwards;
+  animation-timing-function: cubic-bezier(0.18, 0.82, 0.3, 0.98);
 }
 
 @keyframes slideIn {
@@ -20,5 +37,14 @@
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
