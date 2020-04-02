@@ -9,11 +9,13 @@
   box-sizing: border-box;
   opacity: 0;
   animation: fadeIn 2s 2.5s ease forwards;
+  transition: 2s;
 }
 
 .NavigationItem:hover {
   color: #ff6767;
   cursor: pointer;
+  transition: 0.6s;
 }
 
 @keyframes fadeIn {
