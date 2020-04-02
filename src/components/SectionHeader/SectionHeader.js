@@ -11,8 +11,8 @@ class sectionHeader extends Component {
     this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
       if (
-        this.state.yPosition <
-        window.pageYOffset + window.screen.height * 0.6
+        window.pageYOffset + window.screen.height - 500 >
+        this.state.yPosition
       ) {
         this.setState({ onScreen: true });
       } else {
@@ -26,21 +26,25 @@ class sectionHeader extends Component {
   }
 
   renderContent = () => {
-    {
-      if (this.state.onScreen) {
-        return (
-          <div className={classes.SlideInSectionHeader} ref={this.myRef}>
-            <p>{this.props.title}</p>
-          </div>
-        );
-      } else {
-        return (
-          <div className={classes.SlideOutSectionHeader} ref={this.myRef}>
-            <p>{this.props.title}</p>
-          </div>
-        );
-      }
+    let sectionHeaderClasses = [classes.SectionHeader, classes.SlideOut];
+    let textClasses = [];
+
+    sectionHeaderClasses.pop();
+    textClasses.pop();
+
+    if (this.state.onScreen) {
+      sectionHeaderClasses.push(classes.SlideIn);
+      textClasses.push(classes.FadeIn);
+    } else {
+      sectionHeaderClasses.push(classes.SlideOut);
+      textClasses.push(classes.FadeOut);
     }
+
+    return (
+      <div className={sectionHeaderClasses.join(" ")} ref={this.myRef}>
+        <p className={textClasses}>{this.props.title}</p>
+      </div>
+    );
   };
 
   render() {
