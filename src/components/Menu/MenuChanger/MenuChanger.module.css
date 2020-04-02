@@ -6,6 +6,7 @@
   height: 100%;
   width: 50px;
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 50;
 }
 
 .MenuChanger .Options {

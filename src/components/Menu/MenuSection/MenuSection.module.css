@@ -2,15 +2,44 @@
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   margin-bottom: 20px;
+  opacity: 0;
 }
 
 .MenuSection hr {
   border-top: 2px solid rgba(0, 0, 0, 0.8);
   margin-bottom: 30px;
+  transform: translateX(-150%);
+  z-index: -100;
 }
 
 .MenuItems {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.FadeIn {
+  animation: fadeIn 1s 0s ease forwards;
+}
+
+.SlideIn {
+  animation: slideIn 1s 0s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
