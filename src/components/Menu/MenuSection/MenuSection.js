@@ -14,12 +14,14 @@ class menuSection extends Component {
 
     this.interval = setInterval(() => {
       if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.4 >
+        window.pageYOffset + window.screen.height - window.screen.height * 0.2 >
         this.state.yPosition
       ) {
         this.setState({ onScreen: true });
       } else if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.1 <
+        window.pageYOffset +
+          window.screen.height -
+          window.screen.height * 0.12 <
         this.state.yPosition
       ) {
         this.setState({ onScreen: false });
