@@ -1,5 +1,6 @@
 .Pair {
   margin-bottom: 500px;
+  overflow-x: hidden;
 }
 
 .PairOdd {
@@ -20,8 +21,56 @@
   line-height: 2rem;
   font-size: 1.2rem;
   box-sizing: border-box;
+  opacity: 0;
 }
 
 .Pair img {
   width: 55%;
+}
+
+.ImageOdd {
+  transform: translateX(200%);
+}
+
+.ImageEven {
+  transform: translateX(-200%);
+}
+
+.FadeIn {
+  animation: fadeIn 1s 0s ease forwards;
+}
+
+.SlideInFromRight {
+  animation: slideInFromRight 1s 0s ease forwards;
+}
+
+.SlideInFromLeft {
+  animation: slideInFromLeft 1s 0s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
