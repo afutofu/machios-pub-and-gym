@@ -24,30 +24,30 @@
   margin-bottom: 100px;
 }
 
-.Pair {
-  margin-bottom: 500px;
+.Title span {
+  margin: 0 5px;
+  opacity: 0;
 }
 
-.Pair:nth-of-type(odd) {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.SlideIn1 {
+  animation: slideIn 1s 0s ease forwards;
 }
 
-.Pair:nth-of-type(even) {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
+.SlideIn2 {
+  animation: slideIn 1s 1s ease forwards;
 }
 
-.Pair .Text {
-  width: 40%;
-  line-height: 2rem;
-  font-size: 1.2rem;
-  box-sizing: border-box;
+.SlideIn3 {
+  animation: slideIn 1s 2s ease forwards;
 }
 
-.Pair img {
-  width: 55%;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

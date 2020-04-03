@@ -1,0 +1,27 @@
+.Pair {
+  margin-bottom: 500px;
+}
+
+.PairOdd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PairEven {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Pair .Text {
+  width: 40%;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+.Pair img {
+  width: 55%;
+}
