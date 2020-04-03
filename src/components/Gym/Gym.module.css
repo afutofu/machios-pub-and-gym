@@ -51,4 +51,51 @@
 
 .Gym hr {
   border-top: 2px solid black;
+  transform: translateX(-150%);
+}
+
+div.GymContent p,
+h3 {
+  opacity: 0;
+}
+
+.FadeIn {
+  animation: fadeIn 1s 0s ease forwards;
+}
+
+.SlideIn {
+  animation: slideIn 1s 0s ease forwards;
+}
+
+.SlideFadeIn {
+  animation: slideFadeIn 1s 0s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
