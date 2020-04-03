@@ -46,9 +46,9 @@ class Gym extends Component {
       titleClasses.push(classes.FadeIn);
       textClasses.push(classes.SlideFadeIn);
     } else {
-      hrClasses.pop();
-      titleClasses.pop();
-      textClasses.pop();
+      hrClasses.push("");
+      titleClasses.push("");
+      textClasses.push("");
     }
 
     return (

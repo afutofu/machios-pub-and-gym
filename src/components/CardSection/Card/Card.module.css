@@ -10,9 +10,23 @@
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  transform: translateX(-500%);
 }
 
 .Title {
   text-transform: uppercase;
   font-size: 1.5rem;
+}
+
+.SlideIn {
+  animation: slideIn 3s 0s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-500%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
