@@ -16,15 +16,19 @@ class about extends Component {
     this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
       if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.9 >
-        this.state.yPosition
-      ) {
-        this.setState({ onScreen: true });
-      } else if (
         window.pageYOffset + window.screen.height - window.screen.height * 0.6 <
-        this.state.yPosition
+          this.state.yPosition ||
+        window.pageYOffset >
+          this.state.yPosition + window.screen.width - window.screen.width * 0.7
       ) {
         this.setState({ onScreen: false });
+      } else if (
+        window.pageYOffset + window.screen.height - window.screen.height * 0.9 >
+          this.state.yPosition &&
+        window.pageYOffset + window.screen.height - window.screen.height * 1.1 <
+          this.state.yPosition
+      ) {
+        this.setState({ onScreen: true });
       }
     }, 1000);
   }
