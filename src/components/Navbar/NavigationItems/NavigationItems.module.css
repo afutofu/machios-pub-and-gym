@@ -1,9 +1,10 @@
 .NavigationItems {
-  height: 40vh;
+  height: 37vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   list-style: none;
   padding: 0;
+  margin-bottom: 20px;
 }
