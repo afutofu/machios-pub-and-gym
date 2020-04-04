@@ -4,6 +4,7 @@ import classes from "./Menu.module.css";
 
 import SectionHeader from "../SectionHeader/SectionHeader";
 import MenuChanger from "./MenuChanger/MenuChanger";
+import MenuCategory from "./MenuCategory/MenuCategory";
 import MenuSection from "./MenuSection/MenuSection";
 
 class Menu extends Component {
@@ -14,16 +15,27 @@ class Menu extends Component {
   };
 
   renderMenu = () => {
+    let menuSections = [];
+
     switch (this.state.foodCategory) {
       case "meals":
-        return (
-          <React.Fragment>
-            <MenuSection title="entrances" items={6} />
-            <MenuSection title="dishes" items={9} />
-            <MenuSection title="dessert" items={3} />
-          </React.Fragment>
-        );
+        var meals = [
+          { title: "entrances", items: "6" },
+          { title: "dishes", items: "9" },
+          { title: "dessert", items: "3" }
+        ];
+        for (let i = 0; i < meals.length; i++) {
+          menuSections.push({ key: i, ...meals[i] });
+        }
+        return <MenuCategory menuSections={menuSections} />;
       case "drinks":
+        menuSections = [
+          { title: "beers", items: "6" },
+          { title: "cocktail", items: "9" },
+          { title: "whites", items: "3" },
+          { title: "red", items: "3" },
+          { title: "other", items: "6" }
+        ];
         return (
           <React.Fragment>
             <MenuSection title="beers" items={9} />
