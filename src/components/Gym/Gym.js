@@ -5,6 +5,10 @@ import classes from "./Gym.module.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import CardSection from "../CardSection/CardSection";
 
+import calisthenics from "../../assets/images/calisthenics.jpg";
+import dumbbell from "../../assets/images/dumbbell.jpg";
+import cardio from "../../assets/images/cardio.jpg";
+
 class Gym extends Component {
   myRef = React.createRef();
 
@@ -77,7 +81,13 @@ class Gym extends Component {
         <div className={classes.GymGallery}>
           <div className={classes.Transparent}></div>
         </div>
-        <CardSection cards={3} />
+        <CardSection
+          cards={[
+            { title: "calisthenics", image: calisthenics },
+            { title: "free weights", image: dumbbell },
+            { title: "cardio", image: cardio }
+          ]}
+        />
       </section>
     );
   }

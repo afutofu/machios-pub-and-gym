@@ -29,19 +29,15 @@ class card extends Component {
   }
 
   renderContent() {
-    let cardClasses = [classes.Card, ""];
-
-    cardClasses.pop();
+    let cardClasses = [classes.Card];
 
     if (this.state.onScreen) {
       cardClasses.push(classes.SlideIn);
-    } else {
-      cardClasses.push("");
     }
 
     return (
       <div className={cardClasses.join(" ")} ref={this.myRef}>
-        <img src={this.props.image} alt=""></img>
+        <img src={this.props.image} width="200px" height="130px" alt=""></img>
         <h5 className={classes.Title}>{this.props.title}</h5>
         <p className={classes.Desc}>{this.props.desc}</p>
       </div>

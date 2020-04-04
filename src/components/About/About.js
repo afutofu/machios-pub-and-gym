@@ -23,7 +23,9 @@ class about extends Component {
       ) {
         this.setState({ onScreen: false });
       } else if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.9 >
+        window.pageYOffset +
+          window.screen.height -
+          window.screen.height * 0.85 >
           this.state.yPosition &&
         window.pageYOffset + window.screen.height - window.screen.height * 1.1 <
           this.state.yPosition
@@ -41,10 +43,6 @@ class about extends Component {
     let firstPhrase = [],
       secondPhrase = [],
       thirdPhrase = [];
-
-    firstPhrase.pop();
-    secondPhrase.pop();
-    thirdPhrase.pop();
 
     if (this.state.onScreen) {
       firstPhrase.push(classes.SlideIn1);
