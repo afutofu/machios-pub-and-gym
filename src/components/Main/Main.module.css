@@ -2,10 +2,7 @@
   height: 100vh;
   background-color: white;
   overflow: hidden;
-  animation-name: start;
-  animation-duration: 1s;
-  animation-delay: 4.5s;
-  animation-fill-mode: forwards;
+  animation: start 1s 3.5s forwards;
 }
 
 .Margin {

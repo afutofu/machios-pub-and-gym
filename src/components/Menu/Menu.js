@@ -45,6 +45,8 @@ class Menu extends Component {
             <MenuSection title="other" items={6} />
           </React.Fragment>
         );
+      default:
+        return null;
     }
   };
 

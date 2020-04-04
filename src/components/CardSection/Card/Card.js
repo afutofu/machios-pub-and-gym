@@ -41,7 +41,7 @@ class card extends Component {
 
     return (
       <div className={cardClasses.join(" ")} ref={this.myRef}>
-        <img src={this.props.image}></img>
+        <img src={this.props.image} alt=""></img>
         <h5 className={classes.Title}>{this.props.title}</h5>
         <p className={classes.Desc}>{this.props.desc}</p>
       </div>

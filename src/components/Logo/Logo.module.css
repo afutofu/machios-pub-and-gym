@@ -9,7 +9,7 @@
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   opacity: 0;
-  animation: fadeIn 2s 2s ease forwards;
+  animation: fadeIn 2s 1.7s ease forwards;
 }
 
 .Logo:hover {

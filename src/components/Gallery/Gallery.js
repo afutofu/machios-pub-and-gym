@@ -2,9 +2,6 @@ import React from "react";
 
 import classes from "./Gallery.module.css";
 
-import pub1 from "../../assets/images/pub2.jpg";
-import gym1 from "../../assets/images/gym3.jpg";
-
 const gallery = () => {
   const firstSlide = [classes.Slide, classes.FirstSlide];
 
