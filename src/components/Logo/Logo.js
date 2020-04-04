@@ -9,7 +9,7 @@ const logo = () => {
   return (
     <Link className={classes.Logo} to="home" smooth={true} duration={1000}>
       <img src={armIcon} width={70} height={70} alt="" />
-      <h1 className={classes.Title}>MACHO'S</h1>
+      <h1 className={classes.Title}>MACHIO'S</h1>
       <p className={classes.Type}>PUB & GYM</p>
     </Link>
   );

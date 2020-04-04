@@ -51,7 +51,7 @@ class Contact extends Component {
           <div className={textClasses.join(" ")}>
             <p>123.123.1234 or Book online here</p>
             <p>For any other information</p>
-            <p>ask@machospubngym.com</p>
+            <p>ask@machiospubngym.com</p>
           </div>
           <hr className={hrClasses.join(" ")} />
           <p className={titleClasses.join(" ")}>SPECIAL OCCASIONS</p>

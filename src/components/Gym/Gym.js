@@ -37,18 +37,10 @@ class Gym extends Component {
     let titleClasses = [];
     let textClasses = [];
 
-    hrClasses.pop();
-    titleClasses.pop();
-    textClasses.pop();
-
     if (this.state.onScreen) {
       hrClasses.push(classes.SlideIn);
       titleClasses.push(classes.FadeIn);
       textClasses.push(classes.SlideFadeIn);
-    } else {
-      hrClasses.push("");
-      titleClasses.push("");
-      textClasses.push("");
     }
 
     return (
@@ -67,7 +59,7 @@ class Gym extends Component {
           <div className={classes.Close}>
             <div className={classes.GymContent}>
               <h3 className={titleClasses.join(" ")}>
-                THE MACHO'S GYM FITNESS EXPERIENCE
+                THE MACHIO'S GYM FITNESS EXPERIENCE
               </h3>
               <p className={textClasses.join(" ")}>
                 Mollit esse in veniam occaecat. Sint ipsum qui aliquip officia
