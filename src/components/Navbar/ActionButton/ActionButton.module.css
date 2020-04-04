@@ -17,10 +17,24 @@
   color: black;
   transform: translateY(100%);
   animation: jumpIn 1s 2.5s ease forwards;
+  transition: 1s;
 }
 
 .ActionButton:hover {
+  background: #262626;
+  color: #ffe9e9;
+  transition: 0.5s;
+}
+
+.ActionButton p {
+  padding: 10px;
+  transition: 0.5s;
+}
+
+.ActionButton p:hover {
   cursor: pointer;
+  color: #ff6767;
+  transition: 0.5s;
 }
 
 @keyframes jumpIn {

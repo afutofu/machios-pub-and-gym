@@ -8,14 +8,9 @@ const actionButton = props => {
   };
 
   return (
-    <p
-      className={classes.ActionButton}
-      href="https://github.com/afutofu"
-      target="_blank"
-      onClick={onReserveSeat}
-    >
-      {props.text}
-    </p>
+    <div className={classes.ActionButton}>
+      <p onClick={onReserveSeat}>{props.text}</p>
+    </div>
   );
 };
 
