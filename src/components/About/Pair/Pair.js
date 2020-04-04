@@ -19,9 +19,7 @@ class Pair extends Component {
       ) {
         this.setState({ onScreen: false });
       } else if (
-        window.pageYOffset +
-          window.screen.height -
-          window.screen.height * 0.55 >
+        window.pageYOffset + window.screen.height - window.screen.height * 0.4 >
           this.state.yPosition &&
         window.pageYOffset + window.screen.height - window.screen.height * 0.8 <
           this.state.yPosition
