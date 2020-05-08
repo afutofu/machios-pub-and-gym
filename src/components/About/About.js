@@ -32,7 +32,7 @@ class about extends Component {
       ) {
         this.setState({ onScreen: true });
       }
-    }, 1000);
+    }, 100);
   }
 
   componentWillUnmount() {

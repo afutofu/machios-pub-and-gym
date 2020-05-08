@@ -29,7 +29,7 @@ class Gym extends Component {
       ) {
         this.setState({ onScreen: false });
       }
-    }, 1000);
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -85,7 +85,7 @@ class Gym extends Component {
           cards={[
             { title: "calisthenics", image: calisthenics },
             { title: "free weights", image: dumbbell },
-            { title: "cardio", image: cardio }
+            { title: "cardio", image: cardio },
           ]}
         />
       </section>

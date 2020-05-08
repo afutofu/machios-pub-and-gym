@@ -24,7 +24,7 @@
 }
 
 .SlideIn {
-  animation: slideIn 3s 0s ease forwards;
+  animation: slideIn 1s 0s ease forwards;
 }
 
 @keyframes slideIn {

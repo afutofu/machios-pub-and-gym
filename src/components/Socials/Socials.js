@@ -5,7 +5,11 @@ import classes from "./Socials.module.css";
 const socials = () => {
   return (
     <div className={classes.Socials}>
-      <a href="https://github.com/afutofu" target="_blank">
+      <a
+        href="https://github.com/afutofu"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <i class="fa fa-github"></i>
       </a>
       <i class="fa fa-youtube"></i>

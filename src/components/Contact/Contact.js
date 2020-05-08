@@ -23,7 +23,7 @@ class Contact extends Component {
       ) {
         this.setState({ onScreen: true });
       }
-    }, 1000);
+    }, 100);
   }
 
   renderContent = () => {

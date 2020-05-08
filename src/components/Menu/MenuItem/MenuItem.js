@@ -22,7 +22,7 @@ class MenuItem extends Component {
       ) {
         this.setState({ onScreen: false });
       }
-    }, 1000);
+    }, 100);
   }
 
   componentWillUnmount() {
