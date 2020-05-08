@@ -24,7 +24,7 @@ class menuSection extends Component {
       ) {
         this.setState({ onScreen: false });
       }
-    }, 100);
+    }, 1000);
   }
 
   componentWillUnmount() {

@@ -24,7 +24,7 @@ class menuChanger extends Component {
       } else {
         this.setState({ onScreen: false });
       }
-    }, 100);
+    }, 1000);
   }
 
   componentWillUnmount() {
