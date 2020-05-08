@@ -10,10 +10,10 @@ const socials = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <i class="fa fa-github"></i>
+        <i className="fa fa-github"></i>
       </a>
-      <i class="fa fa-youtube"></i>
-      <i class="fa fa-facebook"></i>
+      <i className="fa fa-youtube"></i>
+      <i className="fa fa-facebook"></i>
     </div>
   );
 };

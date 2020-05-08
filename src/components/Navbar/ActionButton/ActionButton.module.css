@@ -19,19 +19,8 @@
 }
 
 .ActionButton:hover {
-  background: #262626;
-  color: #ffe9e9;
-  transition: 0.5s;
-}
-
-.ActionButton p {
-  padding: 10px;
-  transition: 0.5s;
-}
-
-.ActionButton p:hover {
+  background: white;
   cursor: pointer;
-  color: #ff6767;
   transition: 0.5s;
 }
 

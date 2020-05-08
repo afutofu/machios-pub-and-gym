@@ -5,12 +5,11 @@ import classes from "./Menu.module.css";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import MenuChanger from "./MenuChanger/MenuChanger";
 import MenuCategory from "./MenuCategory/MenuCategory";
-import MenuSection from "./MenuSection/MenuSection";
 
 class Menu extends Component {
   state = { foodCategory: "meals" };
 
-  setFoodCategory = foodCategory => {
+  setFoodCategory = (foodCategory) => {
     this.setState({ foodCategory });
   };
 
@@ -19,14 +18,11 @@ class Menu extends Component {
 
     switch (this.state.foodCategory) {
       case "meals":
-        var meals = [
+        menuSections = [
           { title: "entrances", items: "6" },
           { title: "dishes", items: "9" },
-          { title: "dessert", items: "3" }
+          { title: "dessert", items: "3" },
         ];
-        for (let i = 0; i < meals.length; i++) {
-          menuSections.push({ key: i, ...meals[i] });
-        }
         return <MenuCategory menuSections={menuSections} />;
       case "drinks":
         menuSections = [
@@ -34,17 +30,9 @@ class Menu extends Component {
           { title: "cocktail", items: "9" },
           { title: "whites", items: "3" },
           { title: "red", items: "3" },
-          { title: "other", items: "6" }
+          { title: "other", items: "6" },
         ];
-        return (
-          <React.Fragment>
-            <MenuSection title="beers" items={9} />
-            <MenuSection title="cocktail" items={6} />
-            <MenuSection title="whites" items={3} />
-            <MenuSection title="red" items={3} />
-            <MenuSection title="other" items={6} />
-          </React.Fragment>
-        );
+        return <MenuCategory menuSections={menuSections} />;
       default:
         return null;
     }

@@ -38,6 +38,7 @@ class imageSlider extends React.Component {
           {this.state.images.map((imageLink) => {
             return (
               <img
+                key={imageLink}
                 src={imageLink}
                 alt="failed to load"
                 className={classes.Image}
