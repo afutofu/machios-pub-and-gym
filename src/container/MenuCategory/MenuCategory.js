@@ -1,25 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 
 import MenuSection from "../../components/MenuSection/MenuSection";
 
-class menuCategory extends Component {
-  renderMenuSection = () => {
+const menuCategory = (props) => {
+  const renderMenuSection = () => {
     let menuSections = [];
-    for (let i = 0; i < this.props.menuSections.length; i++) {
+    for (let i = 0; i < props.menuSections.length; i++) {
       menuSections.push(
         <MenuSection
-          key={this.props.menuSections[i].title}
-          title={this.props.menuSections[i].title}
-          items={this.props.menuSections[i].items}
+          key={props.menuSections[i].title}
+          title={props.menuSections[i].title}
+          items={props.menuSections[i].items}
         />
       );
     }
     return menuSections;
   };
 
-  render() {
-    return this.renderMenuSection();
-  }
-}
+  return renderMenuSection();
+};
 
 export default menuCategory;

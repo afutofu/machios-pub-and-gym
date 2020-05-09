@@ -1,56 +1,52 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { Link } from "react-scroll";
 
 import classes from "./MenuChanger.module.css";
 
-class menuChanger extends Component {
-  myRef = React.createRef();
+const MenuChanger = (props) => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const { top, bottom } = this.myRef.current.getBoundingClientRect();
+  useEffect(() => {
+    setInterval(() => {
+      const { top, bottom } = myRef.current.getBoundingClientRect();
       if (
         top <= window.screen.height * 0.2 &&
         bottom > window.screen.height * 0.5
       ) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 1000);
-  }
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  onDrinksClick = () => {
-    this.props.setFoodCategory("drinks");
+  const onDrinksClick = () => {
+    props.setFoodCategory("drinks");
   };
 
-  onMealsClick = () => {
-    this.props.setFoodCategory("meals");
+  const onMealsClick = () => {
+    props.setFoodCategory("meals");
   };
 
-  renderContent = () => {
+  const renderContent = () => {
     let menuChangerClasses = [classes.MenuChanger, classes.SlideOut];
 
     menuChangerClasses.pop();
-    if (this.state.onScreen) {
+    if (onScreen) {
       menuChangerClasses.push(classes.SlideIn);
     } else {
       menuChangerClasses.push(classes.SlideOut);
     }
 
     return (
-      <div className={menuChangerClasses.join(" ")} ref={this.myRef}>
+      <div className={menuChangerClasses.join(" ")} ref={myRef}>
         <div className={classes.Options}>
           <Link
             className={classes.Drinks}
-            onClick={this.onDrinksClick}
+            onClick={onDrinksClick}
             to="menuStart"
             smooth={true}
             duration={1000}
@@ -59,7 +55,7 @@ class menuChanger extends Component {
           </Link>
           <Link
             className={classes.Meals}
-            onClick={this.onMealsClick}
+            onClick={onMealsClick}
             to="menuStart"
             smooth={true}
             duration={1000}
@@ -71,9 +67,7 @@ class menuChanger extends Component {
     );
   };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
-export default menuChanger;
+export default MenuChanger;

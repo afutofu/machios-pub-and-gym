@@ -1,36 +1,31 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./Pair.module.css";
 
-class Pair extends Component {
-  myRef = React.createRef();
+const Pair = (props) => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
-    this.interval = setInterval(() => {
-      const top = this.myRef.current.getBoundingClientRect().top;
+  useEffect(() => {
+    setInterval(() => {
+      const top = myRef.current.getBoundingClientRect().top;
       if (top <= window.screen.height * 0.7) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else if (top > window.screen.height * 1) {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 100);
-  }
+  });
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  renderContent() {
+  const renderContent = () => {
     let textClasses = [classes.Text],
       imageClasses = [];
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       textClasses.push(classes.FadeIn);
 
-      if (this.props.isOdd) {
+      if (props.isOdd) {
         imageClasses.push(classes.SlideInFromRight);
       } else {
         imageClasses.push(classes.SlideInFromLeft);
@@ -39,7 +34,7 @@ class Pair extends Component {
 
     let orientation = classes.PairOdd;
 
-    if (!this.props.isOdd) {
+    if (!props.isOdd) {
       orientation = classes.PairEven;
       imageClasses.push(classes.ImageEven);
     } else {
@@ -47,24 +42,22 @@ class Pair extends Component {
     }
 
     return (
-      <div className={classes.Pair} ref={this.myRef}>
+      <div className={classes.Pair} ref={myRef}>
         <div className={orientation}>
           <div className={textClasses.join(" ")}>
-            <p>{this.props.text}</p>
+            <p>{props.text}</p>
           </div>
           <img
             className={imageClasses.join(" ")}
-            src={this.props.image}
+            src={props.image}
             alt=""
           ></img>
         </div>
       </div>
     );
-  }
+  };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
 export default Pair;

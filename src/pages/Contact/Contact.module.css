@@ -12,15 +12,28 @@
   padding: 0 100px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Title {
   text-transform: uppercase;
+  margin: 10px;
+  font-weight: 600;
 }
 
 .Container .Close {
   padding-top: 10px;
   line-height: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Close p {
+  margin: 15px;
 }
 
 .Title,
@@ -29,7 +42,8 @@
 }
 
 .Container hr {
-  margin: 75px 0;
+  margin: 50px 0;
+  width: 50%;
   border-top: 2px solid #ff8383;
   transform: translateX(-150%);
 }

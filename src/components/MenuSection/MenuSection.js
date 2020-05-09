@@ -1,34 +1,28 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./MenuSection.module.css";
 
 import MenuItem from "../MenuItem/MenuItem";
 
-class menuSection extends Component {
-  myRef = React.createRef();
+const MenuSection = (props) => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
-
-    this.interval = setInterval(() => {
-      const top = this.myRef.current.getBoundingClientRect().top;
+  useEffect(() => {
+    setInterval(() => {
+      const top = myRef.current.getBoundingClientRect().top;
       if (top <= window.screen.height * 0.8) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else if (top > window.screen.height * 0.9) {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 100);
-  }
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  renderMenuItems = () => {
+  const renderMenuItems = () => {
     let menuItems = [];
-    for (let i = 0; i < this.props.items; i++) {
+    for (let i = 0; i < props.items; i++) {
       menuItems.push(
         <MenuItem
           key={i}
@@ -41,14 +35,14 @@ class menuSection extends Component {
     return menuItems;
   };
 
-  renderContent = () => {
+  const renderContent = () => {
     let menuSectionTitleClasses = [classes.MenuSectionTitle, ""];
     let hrClasses = [""];
 
     menuSectionTitleClasses.pop();
     hrClasses.pop();
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       menuSectionTitleClasses.push(classes.FadeIn);
       hrClasses.push(classes.SlideIn);
     } else {
@@ -57,17 +51,15 @@ class menuSection extends Component {
     }
 
     return (
-      <div className={classes.MenuSection} ref={this.myRef}>
-        <p className={menuSectionTitleClasses.join(" ")}>{this.props.title}</p>
+      <div className={classes.MenuSection} ref={myRef}>
+        <p className={menuSectionTitleClasses.join(" ")}>{props.title}</p>
         <hr className={hrClasses} />
-        <div className={classes.MenuItems}>{this.renderMenuItems()}</div>
+        <div className={classes.MenuItems}>{renderMenuItems()}</div>
       </div>
     );
   };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
-export default menuSection;
+export default MenuSection;

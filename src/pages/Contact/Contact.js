@@ -1,39 +1,38 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./Contact.module.css";
 
 import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
-class Contact extends Component {
-  myRef = React.createRef();
+const Contact = () => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
-    this.interval = setInterval(() => {
-      const top = this.myRef.current.getBoundingClientRect().top;
+  useEffect(() => {
+    setInterval(() => {
+      const top = myRef.current.getBoundingClientRect().top;
       if (top <= window.screen.height * 0.7) {
-        this.setState({ onScreen: true });
-      } else if (top > window.screen.height * 1) {
-        this.setState({ onScreen: false });
+        setOnScreen(true);
+      } else if (top > window.screen.height * 0.8) {
+        setOnScreen(false);
       }
     }, 100);
-  }
+  }, []);
 
-  renderContent = () => {
+  const renderContent = () => {
     let titleClasses = [classes.Title],
       textClasses = [classes.Close],
       hrClasses = [];
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       titleClasses.push(classes.FadeIn);
       textClasses.push(classes.FadeIn);
       hrClasses.push(classes.SlideIn);
     }
 
     return (
-      <section id="contact" className={classes.Contact} ref={this.myRef}>
+      <section id="contact" className={classes.Contact} ref={myRef}>
         <SectionHeader title="contact" />
         <div className={classes.Container}>
           <p className={titleClasses.join(" ")}>FIND US</p>
@@ -60,9 +59,7 @@ class Contact extends Component {
     );
   };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
 export default Contact;

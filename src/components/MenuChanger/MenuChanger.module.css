@@ -36,11 +36,11 @@
 }
 
 .SlideIn {
-  animation: slideIn 1s 0s ease forwards;
+  animation: slideIn 0.5s 0s ease forwards;
 }
 
 .SlideOut {
-  animation: slideOut 1s 0s ease forwards;
+  animation: slideOut 0.5s 0s ease forwards;
 }
 
 @keyframes slideIn {

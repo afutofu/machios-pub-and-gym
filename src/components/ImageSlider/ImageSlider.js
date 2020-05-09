@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import bar1 from "../../assets/images/luxurybar1.jpg";
 import bar2 from "../../assets/images/luxurybar2.jpg";
@@ -6,50 +6,45 @@ import bar3 from "../../assets/images/luxurybar3.jpg";
 
 import classes from "./ImageSlider.module.css";
 
-class imageSlider extends React.Component {
-  state = { imageIndex: 0, images: [bar1, bar2, bar3] };
+let counter = 0;
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      this.slideImages();
+const ImageSlider = () => {
+  const images = [bar1, bar2, bar3];
+  const [imageIndex, setImageIndex] = useState(0);
+
+  useEffect(() => {
+    setInterval(() => {
+      slideImages();
     }, 7000);
-  }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  slideImages = () => {
-    const { imageIndex, images } = this.state;
-    if (imageIndex === images.length - 1) {
-      this.setState({ imageIndex: 0 });
+  const slideImages = () => {
+    if (counter === images.length - 1) {
+      counter = 0;
     } else {
-      this.setState({ imageIndex: imageIndex + 1 });
+      counter += 1;
     }
+    setImageIndex(counter);
   };
 
-  render() {
-    return (
-      <section id="home" className={classes.ImageSlider}>
-        <div
-          className={classes.Slider}
-          style={{ left: `-${this.state.imageIndex}00%` }}
-        >
-          {this.state.images.map((imageLink) => {
-            return (
-              <img
-                key={imageLink}
-                src={imageLink}
-                alt="failed to load"
-                className={classes.Image}
-              />
-            );
-          })}
-        </div>
-        <div className={classes.Transparent} />
-      </section>
-    );
-  }
-}
+  return (
+    <section id="home" className={classes.ImageSlider}>
+      <div className={classes.Slider} style={{ left: `-${imageIndex}00%` }}>
+        {images.map((imageLink) => {
+          return (
+            <img
+              key={imageLink}
+              src={imageLink}
+              alt="failed to load"
+              className={classes.Image}
+            />
+          );
+        })}
+      </div>
+      <div className={classes.Transparent} />
+    </section>
+  );
+};
 
-export default imageSlider;
+export default ImageSlider;

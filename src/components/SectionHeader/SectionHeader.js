@@ -1,35 +1,31 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./SectionHeader.module.css";
 
-class sectionHeader extends Component {
-  myRef = React.createRef();
+const SectionHeader = (props) => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const top = this.myRef.current.getBoundingClientRect().top;
+  useEffect(() => {
+    setInterval(() => {
+      const top = myRef.current.getBoundingClientRect().top;
       if (top < window.screen.height * 0.8) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 100);
-  }
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  renderContent = () => {
+  const renderContent = () => {
     let sectionHeaderClasses = [classes.SectionHeader, classes.SlideOut];
     let textClasses = [];
 
     sectionHeaderClasses.pop();
     textClasses.pop();
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       sectionHeaderClasses.push(classes.SlideIn);
       textClasses.push(classes.FadeIn);
     } else {
@@ -38,15 +34,13 @@ class sectionHeader extends Component {
     }
 
     return (
-      <div className={sectionHeaderClasses.join(" ")} ref={this.myRef}>
-        <p className={textClasses}>{this.props.title}</p>
+      <div className={sectionHeaderClasses.join(" ")} ref={myRef}>
+        <p className={textClasses}>{props.title}</p>
       </div>
     );
   };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
-export default sectionHeader;
+export default SectionHeader;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./About.module.css";
 
@@ -7,39 +7,35 @@ import Pair from "../../components/Pair/Pair";
 import pub1 from "../../assets/images/pub1.jpg";
 import gym2 from "../../assets/images/gym2.jpg";
 
-class about extends Component {
-  myRef = React.createRef();
+const About = () => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.interval = setInterval(() => {
-      const top = Math.round(this.myRef.current.getBoundingClientRect().top);
+  useEffect(() => {
+    setInterval(() => {
+      const top = Math.round(myRef.current.getBoundingClientRect().top);
       if (top < window.screen.height * 0.05) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else if (top > window.screen.height * 0.45) {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 100);
-  }
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  renderContent() {
+  const renderContent = () => {
     let firstPhrase = [],
       secondPhrase = [],
       thirdPhrase = [];
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       firstPhrase.push(classes.SlideIn1);
       secondPhrase.push(classes.SlideIn2);
       thirdPhrase.push(classes.SlideIn3);
     }
 
     return (
-      <section id="about" className={classes.About} ref={this.myRef}>
+      <section id="about" className={classes.About} ref={myRef}>
         <div className={classes.Container}>
           <h1 className={classes.Title}>
             <span className={firstPhrase.join(" ")}>We serve the best,</span>
@@ -63,11 +59,9 @@ class about extends Component {
         </div>
       </section>
     );
-  }
+  };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
-export default about;
+export default About;

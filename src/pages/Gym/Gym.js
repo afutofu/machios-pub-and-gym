@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./Gym.module.css";
 
@@ -9,41 +9,35 @@ import calisthenics from "../../assets/images/calisthenics.jpg";
 import dumbbell from "../../assets/images/dumbbell.jpg";
 import cardio from "../../assets/images/cardio.jpg";
 
-class Gym extends Component {
-  myRef = React.createRef();
+const Gym = () => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
-
-    this.interval = setInterval(() => {
-      const top = this.myRef.current.getBoundingClientRect().top;
+  useEffect(() => {
+    setInterval(() => {
+      const top = myRef.current.getBoundingClientRect().top;
       if (top <= window.screen.height * 0.2) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else if (top > window.screen.height * 0.5) {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 100);
-  }
+  }, []);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  renderContent() {
+  const renderContent = () => {
     let hrClasses = [];
     let titleClasses = [];
     let textClasses = [];
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       hrClasses.push(classes.SlideIn);
       titleClasses.push(classes.FadeIn);
       textClasses.push(classes.SlideFadeIn);
     }
 
     return (
-      <section id="gym" className={classes.Gym} ref={this.myRef}>
+      <section id="gym" className={classes.Gym} ref={myRef}>
         <SectionHeader title="gym" />
         <div className={classes.Container}>
           <p className={classes.Available}>Available every day of the week</p>
@@ -85,11 +79,9 @@ class Gym extends Component {
         />
       </section>
     );
-  }
+  };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
 export default Gym;

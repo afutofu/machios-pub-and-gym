@@ -1,54 +1,46 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./MenuItem.module.css";
 
-class MenuItem extends Component {
-  myRef = React.createRef();
+const MenuItem = (props) => {
+  const myRef = useRef(null);
 
-  state = { yPosition: 0, onScreen: false };
+  const [onScreen, setOnScreen] = useState(false);
 
-  componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
-
-    this.interval = setInterval(() => {
-      const top = this.myRef.current.getBoundingClientRect().top;
+  useEffect(() => {
+    setInterval(() => {
+      const top = myRef.current.getBoundingClientRect().top;
       if (top <= window.screen.height * 0.85) {
-        this.setState({ onScreen: true });
+        setOnScreen(true);
       } else if (top > window.screen.height * 0.88) {
-        this.setState({ onScreen: false });
+        setOnScreen(false);
       }
     }, 100);
-  }
+  });
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  renderContent = () => {
+  const renderContent = () => {
     let menuItemClasses = [classes.MenuItem, ""];
 
     menuItemClasses.pop();
 
-    if (this.state.onScreen) {
+    if (onScreen) {
       menuItemClasses.push(classes.SlideIn);
     } else {
       menuItemClasses.push("");
     }
 
     return (
-      <div className={menuItemClasses.join(" ")} ref={this.myRef}>
+      <div className={menuItemClasses.join(" ")} ref={myRef}>
         <div className={classes.NamePrice}>
-          <p className={classes.Name}>{this.props.name}</p>
-          <p className={classes.Price}>${this.props.price}</p>
+          <p className={classes.Name}>{props.name}</p>
+          <p className={classes.Price}>${props.price}</p>
         </div>
-        <p className={classes.Desc}>{this.props.desc}</p>
+        <p className={classes.Desc}>{props.desc}</p>
       </div>
     );
   };
 
-  render() {
-    return this.renderContent();
-  }
-}
+  return renderContent();
+};
 
 export default MenuItem;

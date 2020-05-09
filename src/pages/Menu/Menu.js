@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import classes from "./Menu.module.css";
 
@@ -6,17 +6,13 @@ import SectionHeader from "../../components/SectionHeader/SectionHeader";
 import MenuChanger from "../../components/MenuChanger/MenuChanger";
 import MenuCategory from "../../container/MenuCategory/MenuCategory";
 
-class Menu extends Component {
-  state = { foodCategory: "meals" };
+const Menu = () => {
+  const [foodCategory, setFoodCategory] = useState("meals");
 
-  setFoodCategory = (foodCategory) => {
-    this.setState({ foodCategory });
-  };
-
-  renderMenu = () => {
+  const renderMenu = () => {
     let menuSections = [];
 
-    switch (this.state.foodCategory) {
+    switch (foodCategory) {
       case "meals":
         menuSections = [
           { title: "entrances", items: "6" },
@@ -38,24 +34,22 @@ class Menu extends Component {
     }
   };
 
-  render() {
-    return (
-      <section id="menu" className={classes.Menu}>
-        <SectionHeader title="menu" />
-        <MenuChanger setFoodCategory={this.setFoodCategory} />
-        <div className={classes.Container}>
-          <p>Available every weekends</p>
-          <div id="menuStart" className={classes.Close}>
-            <p>Pub opens at 8 a.m. and closes at 11 p.m.</p>
-            <p>
-              Visit the blackboard in the main hall to check discounted items
-            </p>
-          </div>
-          {this.renderMenu()}
+  return (
+    <section id="menu" className={classes.Menu}>
+      <SectionHeader title="menu" />
+      <MenuChanger
+        setFoodCategory={(foodCategory) => setFoodCategory(foodCategory)}
+      />
+      <div className={classes.Container}>
+        <p>Available every weekends</p>
+        <div id="menuStart" className={classes.Close}>
+          <p>Pub opens at 8 a.m. and closes at 11 p.m.</p>
+          <p>Visit the blackboard in the main hall to check discounted items</p>
         </div>
-      </section>
-    );
-  }
-}
+        {renderMenu()}
+      </div>
+    </section>
+  );
+};
 
 export default Menu;
