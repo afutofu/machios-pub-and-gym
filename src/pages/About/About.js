@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import classes from "./About.module.css";
 
-import Pair from "./Pair/Pair";
+import Pair from "../../components/Pair/Pair";
 
 import pub1 from "../../assets/images/pub1.jpg";
 import gym2 from "../../assets/images/gym2.jpg";

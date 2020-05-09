@@ -2,12 +2,12 @@ import React from "react";
 
 import classes from "./Main.module.css";
 
-import ImageSlider from "../ImageSlider/ImageSlider";
-import Menu from "../Menu/Menu";
-import Gym from "../Gym/Gym";
-import About from "../About/About";
-import Gallery from "../Gallery/Gallery";
-import Contact from "../Contact/Contact";
+import ImageSlider from "../../components/ImageSlider/ImageSlider";
+import Menu from "../../pages/Menu/Menu";
+import Gym from "../../pages/Gym/Gym";
+import About from "../../pages/About/About";
+import Gallery from "../../pages/Gallery/Gallery";
+import Contact from "../../pages/Contact/Contact";
 
 const main = () => {
   return (

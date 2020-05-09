@@ -2,8 +2,8 @@ import React, { Component } from "react";
 
 import classes from "./Gym.module.css";
 
-import SectionHeader from "../SectionHeader/SectionHeader";
-import CardSection from "../CardSection/CardSection";
+import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import CardSection from "../../container/CardSection/CardSection";
 
 import calisthenics from "../../assets/images/calisthenics.jpg";
 import dumbbell from "../../assets/images/dumbbell.jpg";

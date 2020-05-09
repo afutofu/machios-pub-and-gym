@@ -2,9 +2,9 @@ import React from "react";
 
 import classes from "./CardSection.module.css";
 
-import Card from "./Card/Card";
+import Card from "../../components/Card/Card";
 
-const cardSection = props => {
+const cardSection = (props) => {
   const renderCards = () => {
     let cards = [];
     for (let i = 0; i < props.cards.length; i++) {

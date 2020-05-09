@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 import classes from "./Menu.module.css";
 
-import SectionHeader from "../SectionHeader/SectionHeader";
-import MenuChanger from "./MenuChanger/MenuChanger";
-import MenuCategory from "./MenuCategory/MenuCategory";
+import SectionHeader from "../../components/SectionHeader/SectionHeader";
+import MenuChanger from "../../components/MenuChanger/MenuChanger";
+import MenuCategory from "../../container/MenuCategory/MenuCategory";
 
 class Menu extends Component {
   state = { foodCategory: "meals" };

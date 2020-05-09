@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import MenuSection from "../MenuSection/MenuSection";
+import MenuSection from "../../components/MenuSection/MenuSection";
 
 class menuCategory extends Component {
   renderMenuSection = () => {

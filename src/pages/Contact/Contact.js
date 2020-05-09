@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import classes from "./Contact.module.css";
 
-import SectionHeader from "../SectionHeader/SectionHeader";
+import SectionHeader from "../../components/SectionHeader/SectionHeader";
 
 class Contact extends Component {
   myRef = React.createRef();

@@ -8,8 +8,9 @@
   padding: 15px;
   box-sizing: border-box;
   opacity: 0;
-  animation: fadeIn 2s 2s ease forwards;
   transition: 0.5s;
+  pointer-events: none;
+  animation: fadeIn 2s 2s ease forwards, enable 0s 4s ease forwards;
 }
 
 .NavigationItem:hover {
@@ -25,5 +26,14 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes enable {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: visible;
   }
 }
