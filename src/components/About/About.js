@@ -13,24 +13,12 @@ class about extends Component {
   state = { yPosition: 0, onScreen: false };
 
   componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
-      if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.6 <
-          this.state.yPosition ||
-        window.pageYOffset >
-          this.state.yPosition + window.screen.width - window.screen.width * 0.7
-      ) {
-        this.setState({ onScreen: false });
-      } else if (
-        window.pageYOffset +
-          window.screen.height -
-          window.screen.height * 0.85 >
-          this.state.yPosition &&
-        window.pageYOffset + window.screen.height - window.screen.height * 1.1 <
-          this.state.yPosition
-      ) {
+      const top = Math.round(this.myRef.current.getBoundingClientRect().top);
+      if (top < window.screen.height * 0.05) {
         this.setState({ onScreen: true });
+      } else if (top > window.screen.height * 0.45) {
+        this.setState({ onScreen: false });
       }
     }, 100);
   }

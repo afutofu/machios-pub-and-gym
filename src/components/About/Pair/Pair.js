@@ -10,23 +10,13 @@ class Pair extends Component {
   componentDidMount() {
     this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
-      if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0 <
-          this.state.yPosition ||
-        window.pageYOffset >
-          this.state.yPosition +
-            this.myRef.current.getBoundingClientRect().height
-      ) {
-        this.setState({ onScreen: false });
-      } else if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.4 >
-          this.state.yPosition &&
-        window.pageYOffset + window.screen.height - window.screen.height * 0.8 <
-          this.state.yPosition
-      ) {
+      const top = this.myRef.current.getBoundingClientRect().top;
+      if (top <= window.screen.height * 0.7) {
         this.setState({ onScreen: true });
+      } else if (top > window.screen.height * 1) {
+        this.setState({ onScreen: false });
       }
-    }, 500);
+    }, 100);
   }
 
   componentWillUnmount() {

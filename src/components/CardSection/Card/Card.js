@@ -10,15 +10,10 @@ class card extends Component {
   componentDidMount() {
     this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
-      if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.4 >
-        this.state.yPosition
-      ) {
+      const top = this.myRef.current.getBoundingClientRect().top;
+      if (top <= window.screen.height * 0.7) {
         this.setState({ onScreen: true });
-      } else if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.1 <
-        this.state.yPosition
-      ) {
+      } else if (top > window.screen.height * 0.9) {
         this.setState({ onScreen: false });
       }
     }, 100);

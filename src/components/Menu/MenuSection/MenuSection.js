@@ -13,18 +13,13 @@ class menuSection extends Component {
     this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
 
     this.interval = setInterval(() => {
-      if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.2 >
-        this.state.yPosition
-      ) {
+      const top = this.myRef.current.getBoundingClientRect().top;
+      if (top <= window.screen.height * 0.8) {
         this.setState({ onScreen: true });
-      } else if (
-        window.pageYOffset + window.screen.height - window.screen.height * 0.1 <
-        this.state.yPosition
-      ) {
+      } else if (top > window.screen.height * 0.9) {
         this.setState({ onScreen: false });
       }
-    }, 1000);
+    }, 100);
   }
 
   componentWillUnmount() {

@@ -10,15 +10,11 @@ class menuChanger extends Component {
   state = { yPosition: 0, onScreen: false };
 
   componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
+      const { top, bottom } = this.myRef.current.getBoundingClientRect();
       if (
-        window.pageYOffset + window.screen.height - 500 >
-          this.state.yPosition &&
-        window.pageYOffset <
-          (this.state.yPosition +
-            this.myRef.current.getBoundingClientRect().height) *
-            0.85
+        top <= window.screen.height * 0.2 &&
+        bottom > window.screen.height * 0.5
       ) {
         this.setState({ onScreen: true });
       } else {

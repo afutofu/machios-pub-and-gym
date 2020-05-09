@@ -8,12 +8,9 @@ class sectionHeader extends Component {
   state = { yPosition: 0, onScreen: false };
 
   componentDidMount() {
-    this.setState({ yPosition: this.myRef.current.getBoundingClientRect().y });
     this.interval = setInterval(() => {
-      if (
-        window.pageYOffset + window.screen.height - 500 >
-        this.state.yPosition
-      ) {
+      const top = this.myRef.current.getBoundingClientRect().top;
+      if (top < window.screen.height * 0.8) {
         this.setState({ onScreen: true });
       } else {
         this.setState({ onScreen: false });
