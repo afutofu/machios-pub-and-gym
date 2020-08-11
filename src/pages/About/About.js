@@ -45,8 +45,7 @@ const About = () => {
           <Pair
             text="Fresh tenderloin steak, mashed potatoes with homemade special
                 sauce, a healthy salad and finish it off with a jug full of low
-                calorie beer while hanging out with the boys in the warm night of
-                a Friday evening after a long day of effort."
+                calorie beer on a Friday evening."
             image={pub1}
             isOdd={true}
           />
