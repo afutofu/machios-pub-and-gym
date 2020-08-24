@@ -1,1 +1,1 @@
-A website for Macho's Pub & Gym using React
+A website for Machio's Pub & Gym
