@@ -11,14 +11,16 @@ const MenuChanger = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      const { top, bottom } = myRef.current.getBoundingClientRect();
-      if (
-        top <= window.screen.height * 0.2 &&
-        bottom > window.screen.height * 0.5
-      ) {
-        setOnScreen(true);
-      } else {
-        setOnScreen(false);
+      if(myRef.current){
+        const { top, bottom } = myRef.current.getBoundingClientRect();
+        if (
+          top <= window.screen.height * 0.2 &&
+          bottom > window.screen.height * 0.5
+        ) {
+          setOnScreen(true);
+        } else {
+          setOnScreen(false);
+        }
       }
     }, 1000);
   }, []);

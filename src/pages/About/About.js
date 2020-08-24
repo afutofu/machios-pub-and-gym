@@ -14,11 +14,13 @@ const About = () => {
 
   useEffect(() => {
     setInterval(() => {
-      const top = Math.round(myRef.current.getBoundingClientRect().top);
-      if (top < window.screen.height * 0.05) {
-        setOnScreen(true);
-      } else if (top > window.screen.height * 0.45) {
-        setOnScreen(false);
+      if(myRef.current){
+        const top = Math.round(myRef.current.getBoundingClientRect().top);
+        if (top < window.screen.height * 0.05) {
+          setOnScreen(true);
+        } else if (top > window.screen.height * 0.45) {
+          setOnScreen(false);
+        }
       }
     }, 100);
   }, []);

@@ -11,11 +11,13 @@ const Contact = () => {
 
   useEffect(() => {
     setInterval(() => {
-      const top = myRef.current.getBoundingClientRect().top;
-      if (top <= window.screen.height * 0.7) {
-        setOnScreen(true);
-      } else if (top > window.screen.height * 0.8) {
-        setOnScreen(false);
+      if(myRef.current){
+        const top = myRef.current.getBoundingClientRect().top;
+        if (top <= window.screen.height * 0.7) {
+          setOnScreen(true);
+        } else if (top > window.screen.height * 0.8) {
+          setOnScreen(false);
+        }
       }
     }, 100);
   }, []);
@@ -28,12 +30,12 @@ const Contact = () => {
     if (onScreen) {
       titleClasses.push(classes.FadeIn);
       textClasses.push(classes.FadeIn);
-      hrClasses.push(classes.SlideIn);
+      hrClasses.push(classes.ScaleOut);
     }
 
     return (
       <section id="contact" className={classes.Contact} ref={myRef}>
-        <SectionHeader title="contact" />
+        {/* <SectionHeader title="contact" /> */}
         <div className={classes.Container}>
           <p className={titleClasses.join(" ")}>FIND US</p>
           <div className={textClasses.join(" ")}>

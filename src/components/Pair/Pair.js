@@ -9,11 +9,13 @@ const Pair = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      const top = myRef.current.getBoundingClientRect().top;
-      if (top <= window.screen.height * 0.7) {
-        setOnScreen(true);
-      } else if (top > window.screen.height * 1) {
-        setOnScreen(false);
+      if(myRef.current){
+        const top = myRef.current.getBoundingClientRect().top;
+        if (top <= window.screen.height * 0.7) {
+          setOnScreen(true);
+        } else if (top > window.screen.height * 1) {
+          setOnScreen(false);
+        }
       }
     }, 100);
   });
