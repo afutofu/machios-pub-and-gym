@@ -9,11 +9,13 @@ const SectionHeader = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      const top = myRef.current.getBoundingClientRect().top;
-      if (top < window.screen.height * 0.8) {
-        setOnScreen(true);
-      } else {
-        setOnScreen(false);
+      if(myRef.current){
+        const top = myRef.current.getBoundingClientRect().top;
+        if (top < window.screen.height * 0.8) {
+          setOnScreen(true);
+        } else {
+          setOnScreen(false);
+        }
       }
     }, 100);
   }, []);

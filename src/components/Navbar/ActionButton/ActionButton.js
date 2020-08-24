@@ -8,8 +8,8 @@ const actionButton = props => {
   };
 
   return (
-    <div className={classes.ActionButton}>
-      <p onClick={onReserveSeat}>{props.text}</p>
+    <div className={classes.ActionButton} onClick={onReserveSeat}>
+      <p >{props.text}</p>
     </div>
   );
 };

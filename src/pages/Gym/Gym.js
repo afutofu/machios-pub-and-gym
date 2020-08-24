@@ -16,11 +16,13 @@ const Gym = () => {
 
   useEffect(() => {
     setInterval(() => {
-      const top = myRef.current.getBoundingClientRect().top;
-      if (top <= window.screen.height * 0.2) {
-        setOnScreen(true);
-      } else if (top > window.screen.height * 0.5) {
-        setOnScreen(false);
+      if(myRef.current){
+        const top = myRef.current.getBoundingClientRect().top;
+        if (top <= window.screen.height * 0.2) {
+          setOnScreen(true);
+        } else if (top > window.screen.height * 0.5) {
+          setOnScreen(false);
+        }
       }
     }, 100);
   }, []);

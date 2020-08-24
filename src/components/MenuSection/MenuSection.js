@@ -11,7 +11,11 @@ const MenuSection = (props) => {
 
   useEffect(() => {
     setInterval(() => {
+<<<<<<< HEAD
       if (myRef.current) {
+=======
+      if (myRef.current){
+>>>>>>> 409d681f78f75ff83f3fe30c881c89783ac21db6
         const top = myRef.current.getBoundingClientRect().top;
         if (top <= window.screen.height * 0.8) {
           setOnScreen(true);

@@ -16,6 +16,8 @@
   transition: 0.1s;
   padding: 15px;
   margin: 5px;
+  pointer-events: none;
+  animation: enable 0s 4s ease forwards;
 }
 
 .Socials i:hover {
@@ -31,5 +33,14 @@
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes enable {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: visible;
   }
 }

@@ -2,7 +2,8 @@
   position: relative;
   width: 100%;
   background-color: #fdf3f3;
-  padding: 75px 0;
+  padding: 50px 0;
+  box-sizing: border-box;;
 }
 
 .Container {
@@ -19,12 +20,22 @@
 
 .Title {
   text-transform: uppercase;
-  margin: 10px;
+  margin: 15px;
   font-weight: 600;
+  text-align: center;
 }
 
 .Container .Close {
-  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Container .Close:last-of-type{
+  padding-bottom: 0px;
   line-height: 0.8rem;
   display: flex;
   flex-direction: column;
@@ -33,7 +44,9 @@
 }
 
 .Close p {
-  margin: 15px;
+  margin: 10px;
+  line-height: 1.5rem;
+  text-align: center;
 }
 
 .Title,
@@ -42,10 +55,10 @@
 }
 
 .Container hr {
-  margin: 50px 0;
+  margin: 40px 0;
   width: 50%;
   border-top: 2px solid #ff8383;
-  transform: translateX(-150%);
+  transform: scaleX(0)
 }
 
 .FadeIn {
@@ -54,6 +67,10 @@
 
 .SlideIn {
   animation: slideIn 2s 0s ease forwards;
+}
+
+.ScaleOut{
+  animation: scaleOut 0.7s 0.5s forwards;
 }
 
 @keyframes fadeIn {
@@ -73,5 +90,14 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes scaleOut {
+  from{
+    transform: scaleX(0)
+  }
+  to{
+    transform: scaleX(1)
   }
 }

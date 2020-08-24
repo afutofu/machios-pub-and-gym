@@ -8,14 +8,17 @@
   background: #ffe9e9;
   border: none;
   font-family: Arial, Helvetica, sans-serif;
-  letter-spacing: 0.3rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
   opacity: 0;
-  font-size: 0.9em;
+  font-size: 0.85em;
   text-decoration: none;
   color: black;
   transform: translateY(100%);
-  animation: jumpIn 1s 2.5s ease forwards;
+  pointer-events: none;
+  animation: jumpIn 1s 2.5s ease forwards, enable 0s 4s ease forwards;;
   transition: 1s;
+
 }
 
 .ActionButton:hover {
@@ -32,6 +35,15 @@
   to {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@keyframes enable {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: visible;
   }
 }
 
