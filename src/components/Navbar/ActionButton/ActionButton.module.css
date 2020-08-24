@@ -15,8 +15,10 @@
   text-decoration: none;
   color: black;
   transform: translateY(100%);
-  animation: jumpIn 1s 2.5s ease forwards;
+  pointer-events: none;
+  animation: jumpIn 1s 2.5s ease forwards, enable 0s 4s ease forwards;;
   transition: 1s;
+
 }
 
 .ActionButton:hover {
@@ -33,6 +35,15 @@
   to {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@keyframes enable {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: visible;
   }
 }
 
