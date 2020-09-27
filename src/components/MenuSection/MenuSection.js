@@ -24,16 +24,6 @@ const MenuSection = (props) => {
 
   const renderMenuItems = () => {
     let menuItems = [];
-    // for (let i = 0; i < props.items.length; i++) {
-    //   menuItems.push(
-    //     <MenuItem
-    //       key={i}
-    //       name="lorem"
-    //       price="5"
-    //       desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."
-    //     />
-    //   );
-    // }
     props.items.forEach((item, i) => {
       menuItems.push(
         <MenuItem
