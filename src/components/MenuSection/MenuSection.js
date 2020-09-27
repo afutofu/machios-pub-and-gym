@@ -11,7 +11,7 @@ const MenuSection = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      if (myRef.current){
+      if (myRef.current) {
         const top = myRef.current.getBoundingClientRect().top;
         if (top <= window.screen.height * 0.8) {
           setOnScreen(true);
@@ -24,16 +24,26 @@ const MenuSection = (props) => {
 
   const renderMenuItems = () => {
     let menuItems = [];
-    for (let i = 0; i < props.items; i++) {
+    // for (let i = 0; i < props.items.length; i++) {
+    //   menuItems.push(
+    //     <MenuItem
+    //       key={i}
+    //       name="lorem"
+    //       price="5"
+    //       desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."
+    //     />
+    //   );
+    // }
+    props.items.forEach((item, i) => {
       menuItems.push(
         <MenuItem
           key={i}
-          name="lorem"
-          price="5"
-          desc="Dolor est occaecat culpa qui irure et commodo laborum id ad."
+          name={item.name}
+          price={item.price}
+          desc={item.desc}
         />
       );
-    }
+    });
     return menuItems;
   };
 

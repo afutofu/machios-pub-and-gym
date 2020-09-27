@@ -12,23 +12,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-weight: 500;
 }
 
 .Name {
   margin: 0;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   font-size: 0.95rem;
 }
 
 .Price {
   margin: 0;
-  letter-spacing: 0.3rem;
-  padding-right: 20%;
+  letter-spacing: 0.05rem;
+  padding-left: 20px;
 }
 
 .Desc {
   line-height: 1.4rem;
+  opacity: 0.8;
 }
 
 .SlideIn {
