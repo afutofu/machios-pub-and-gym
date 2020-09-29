@@ -9,7 +9,7 @@ const Card = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      if(myRef.current){
+      if (myRef.current) {
         const top = myRef.current.getBoundingClientRect().top;
         if (top <= window.screen.height * 0.7) {
           setOnScreen(true);
@@ -17,7 +17,6 @@ const Card = (props) => {
           setOnScreen(false);
         }
       }
-      
     }, 100);
   }, []);
 
@@ -30,9 +29,12 @@ const Card = (props) => {
 
     return (
       <div className={cardClasses.join(" ")} ref={myRef}>
-        <img src={props.image} width="200px" height="130px" alt=""></img>
-        <h5 className={classes.Title}>{props.title}</h5>
-        <p className={classes.Desc}>{props.desc}</p>
+        {/* <img src={props.image} width="200px" height="130px" alt=""></img> */}
+        <img src={props.image} className={classes.Image} alt=""></img>
+        <div className={classes.Text}>
+          <h5 className={classes.Title}>{props.title}</h5>
+          <p className={classes.Desc}>{props.desc}</p>
+        </div>
       </div>
     );
   };

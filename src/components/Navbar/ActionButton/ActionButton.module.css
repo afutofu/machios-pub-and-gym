@@ -9,22 +9,20 @@
   border: none;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.15rem;
   opacity: 0;
-  font-size: 0.85em;
+  font-size: 16px;
   text-decoration: none;
   color: black;
   transform: translateY(100%);
   pointer-events: none;
-  animation: jumpIn 1s 2.5s ease forwards, enable 0s 4s ease forwards;;
-  transition: 1s;
-
+  animation: jumpIn 1s 2.5s ease forwards, enable 0s 4s ease forwards;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .ActionButton:hover {
-  background: white;
-  cursor: pointer;
-  transition: 0.5s;
+  background: #fff5f5;
 }
 
 @keyframes jumpIn {

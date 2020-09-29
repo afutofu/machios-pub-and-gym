@@ -1,9 +1,9 @@
 .Contact {
   position: relative;
   width: 100%;
-  background-color: #fdf3f3;
+  background-color: #ffe9e9;
   padding: 50px 0;
-  box-sizing: border-box;;
+  box-sizing: border-box;
 }
 
 .Container {
@@ -34,7 +34,7 @@
   align-items: center;
 }
 
-.Container .Close:last-of-type{
+.Container .Close:last-of-type {
   padding-bottom: 0px;
   line-height: 0.8rem;
   display: flex;
@@ -58,7 +58,7 @@
   margin: 40px 0;
   width: 50%;
   border-top: 2px solid #ff8383;
-  transform: scaleX(0)
+  transform: scaleX(0);
 }
 
 .FadeIn {
@@ -69,7 +69,7 @@
   animation: slideIn 2s 0s ease forwards;
 }
 
-.ScaleOut{
+.ScaleOut {
   animation: scaleOut 0.7s 0.5s forwards;
 }
 
@@ -94,10 +94,10 @@
 }
 
 @keyframes scaleOut {
-  from{
-    transform: scaleX(0)
+  from {
+    transform: scaleX(0);
   }
-  to{
-    transform: scaleX(1)
+  to {
+    transform: scaleX(1);
   }
 }

@@ -16,7 +16,7 @@ const Gym = () => {
 
   useEffect(() => {
     setInterval(() => {
-      if(myRef.current){
+      if (myRef.current) {
         const top = myRef.current.getBoundingClientRect().top;
         if (top <= window.screen.height * 0.2) {
           setOnScreen(true);
@@ -57,14 +57,14 @@ const Gym = () => {
                 THE MACHIO'S GYM FITNESS EXPERIENCE
               </h3>
               <p className={textClasses.join(" ")}>
-                Mollit esse in veniam occaecat. Sint ipsum qui aliquip officia
-                tempor aliquip eu. Labore laborum ad sint elit tempor sunt est
-                irure non. Officia ullamco ea deserunt laborum aliqua qui.
-                Mollit culpa nostrud tempor deserunt culpa velit ex deserunt
-                consectetur magna amet veniam sit. Laboris Lorem irure aliqua
-                est laboris eu ut fugiat magna duis aliquip cupidatat veniam.
-                Nisi nostrud esse veniam anim incididunt ullamco culpa do
-                cillum.
+                Experience the highest quality level of fitness in Machio's gym.
+                Complete with all forms of exercise equipment, ranging from
+                calisthenic equipments such as pull up bars, the obvious free
+                weights like dumbbells and barbells, and cardio equipments like
+                treadmills and jump ropes. Our trainers are veteran athletes
+                with up to 30 years of experience, present to ensure customers
+                are given the best possible fitness advice and training in the
+                world.
               </p>
             </div>
           </div>
@@ -74,9 +74,24 @@ const Gym = () => {
         </div>
         <CardSection
           cards={[
-            { title: "calisthenics", image: calisthenics },
-            { title: "free weights", image: dumbbell },
-            { title: "cardio", image: cardio },
+            {
+              title: "calisthenics",
+              image: calisthenics,
+              desc:
+                "Calisthenics is a form of fitness which utilises gravity and bodyweight leverage to challenge your fitness level",
+            },
+            {
+              title: "free weights",
+              image: dumbbell,
+              desc:
+                "Free weights include any weight you can pick up and move around, such as dumbbells, barbells, and kettlebells.",
+            },
+            {
+              title: "cardio",
+              image: cardio,
+              desc:
+                "Cardio refers to any exercise that creates an energy demand on your body to elevates your heart rate and gets your blood pumping faster",
+            },
           ]}
         />
       </section>

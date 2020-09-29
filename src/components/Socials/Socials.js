@@ -6,7 +6,7 @@ const socials = () => {
   return (
     <div className={classes.Socials}>
       <a
-        href="https://github.com/afutofu"
+        href="https://github.com/afutofu/machios-pub-and-gym"
         target="_blank"
         rel="noopener noreferrer"
       >

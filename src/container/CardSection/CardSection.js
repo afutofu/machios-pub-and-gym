@@ -12,7 +12,7 @@ const cardSection = (props) => {
         <Card
           key={i}
           title={props.cards[i].title}
-          desc="Culpa duis excepteur aliqua consectetur officia et eiusmod officia cillum sunt eu laborum aliqua et."
+          desc={props.cards[i].desc}
           image={props.cards[i].image}
         />
       );
