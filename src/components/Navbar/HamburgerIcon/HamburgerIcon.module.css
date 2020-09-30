@@ -1,0 +1,58 @@
+.HamburgerIcon {
+  position: absolute;
+  right: 20px;
+  top: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.HamburgerIcon div {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.HamburgerIcon div:first-of-type {
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.HamburgerIcon div:last-of-type {
+  margin: 0;
+  margin-top: 2px;
+}
+
+@media only screen and (min-width: 992px) {
+  .HamburgerIcon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .HamburgerIcon {
+    top: 15px;
+    right: 8%;
+    width: 22px;
+    height: 21px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .HamburgerIcon {
+    top: 17px;
+    right: 5%;
+    width: 18px;
+    height: 18px;
+  }
+}

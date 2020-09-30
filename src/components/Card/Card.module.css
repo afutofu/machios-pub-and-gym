@@ -59,6 +59,10 @@
     display: flex;
   }
 
+  .Card:last-of-type {
+    margin-bottom: 0;
+  }
+
   .Image {
     width: 50%;
     height: 100%;
@@ -67,5 +71,13 @@
   .Text {
     width: 50%;
     height: 100%;
+  }
+
+  .Title {
+    font-size: 16px;
+  }
+
+  .Desc {
+    font-size: 14px;
   }
 }

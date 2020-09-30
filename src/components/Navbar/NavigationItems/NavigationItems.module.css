@@ -8,3 +8,10 @@
   padding: 0;
   margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 992px) {
+  .NavigationItems {
+    padding-top: 100px;
+    height: 30vh;
+  }
+}
