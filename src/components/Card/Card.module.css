@@ -6,6 +6,7 @@
   font-family: "Quicksand", Helvetica, sans-serif;
   text-align: center;
   transform: translateX(-500%);
+  box-sizing: border-box;
 }
 
 .Image {
@@ -46,5 +47,25 @@
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .Card {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    display: flex;
+  }
+
+  .Image {
+    width: 50%;
+    height: 100%;
+  }
+
+  .Text {
+    width: 50%;
+    height: 100%;
   }
 }
