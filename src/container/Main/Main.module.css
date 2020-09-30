@@ -1,7 +1,6 @@
 .Main {
   height: 100vh;
   background-color: white;
-  overflow: auto;
   box-sizing: border-box;
 }
 

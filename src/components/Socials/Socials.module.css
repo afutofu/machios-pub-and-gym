@@ -44,3 +44,10 @@
     pointer-events: visible;
   }
 }
+
+@media only screen and (max-width: 992px) {
+  .Socials {
+    max-width: 400px;
+    margin: 20px 0;
+  }
+}

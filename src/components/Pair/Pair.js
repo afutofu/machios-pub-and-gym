@@ -9,7 +9,7 @@ const Pair = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      if(myRef.current){
+      if (myRef.current) {
         const top = myRef.current.getBoundingClientRect().top;
         if (top <= window.screen.height * 0.7) {
           setOnScreen(true);

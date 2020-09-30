@@ -11,6 +11,8 @@
   margin: 0;
   padding: 0;
   cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s 2s ease forwards;
 }
 
 .HamburgerIcon div {
@@ -33,18 +35,28 @@
   margin-top: 2px;
 }
 
-@media only screen and (min-width: 992px) {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 993px) {
   .HamburgerIcon {
-    display: none;
+    opacity: 0 !important;
+    pointer-events: none;
   }
 }
 
 @media only screen and (max-width: 992px) {
   .HamburgerIcon {
-    top: 15px;
+    top: 14px;
     right: 8%;
     width: 22px;
-    height: 21px;
+    height: 22px;
   }
 }
 

@@ -17,11 +17,61 @@
   overflow: hidden;
 }
 
+.Navbar2 {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #262626;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Quicksand", Helvetica, sans-serif;
+  overflow: hidden;
+}
+
+.Invis {
+  opacity: 0;
+}
+
+.DropDown {
+  animation: dropDown 0.7s 0s ease forwards;
+}
+
+.Retract {
+  animation: retract 0.7s 0s ease forwards;
+}
+
 @keyframes appearIn {
   from {
     transform: translateY(-100%);
   }
   to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}
+
+@keyframes retract {
+  from {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
