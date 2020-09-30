@@ -3,6 +3,7 @@
   text-transform: uppercase;
   margin-bottom: 20px;
   opacity: 0;
+  font-weight: 500;
 }
 
 .MenuSection hr {

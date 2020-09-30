@@ -7,8 +7,8 @@
   align-items: center;
   background: #ffe9e9;
   border: none;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: "Quicksand", Helvetica, sans-serif;
+  font-weight: 500;
   letter-spacing: 0.15rem;
   opacity: 0;
   font-size: 16px;
@@ -22,7 +22,7 @@
 }
 
 .ActionButton:hover {
-  background: #fff5f5;
+  background: #ff8383;
 }
 
 @keyframes jumpIn {

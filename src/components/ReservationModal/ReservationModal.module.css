@@ -6,7 +6,8 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Quicksand", Helvetica, sans-serif;
+  animation: fadeIn 1s 0s;
 }
 
 .ReservationBox {
@@ -14,8 +15,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* width: 300px; */
-  /* height: 120px; */
   background-color: #222;
   color: white;
   box-sizing: border-box;
@@ -48,6 +47,7 @@
   padding: 7px;
   outline: none;
   border: none;
+  font-family: "Quicksand", Helvetica, sans-serif;
 }
 
 .Button {
@@ -59,14 +59,26 @@
   cursor: pointer;
   background-color: #ffe9e9;
   transition: 0.5s;
+  padding-bottom: 9px;
   margin-bottom: 20px;
+  font-family: "Quicksand", Helvetica, sans-serif;
+  font-weight: 500;
 }
 
 .Button:hover {
-  background: #fff5f5;
+  background: #ff8383;
 }
 
 .Notification {
   margin: 0;
   font-size: 14px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

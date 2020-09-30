@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import classes from "./ReservationModal.module.css";
 
 const ReservationModal = (props) => {
   const [email, setEmail] = useState("");
   const [sent, setSent] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(props.isOpen);
 
   const onEmailChange = (e) => {
     setEmail(e.target.value);
@@ -17,12 +17,16 @@ const ReservationModal = (props) => {
   };
 
   const onModalClose = () => {
-    setIsOpen(false);
+    props.onReserveModalClose();
   };
 
   const onModalClick = (e) => {
     e.stopPropagation();
   };
+
+  useEffect(() => {
+    setIsOpen(props.isOpen);
+  }, [props.isOpen]);
 
   if (!isOpen) {
     return null;

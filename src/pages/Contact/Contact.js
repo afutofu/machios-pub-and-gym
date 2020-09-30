@@ -11,7 +11,7 @@ const Contact = () => {
 
   useEffect(() => {
     setInterval(() => {
-      if(myRef.current){
+      if (myRef.current) {
         const top = myRef.current.getBoundingClientRect().top;
         if (top <= window.screen.height * 0.7) {
           setOnScreen(true);
@@ -40,7 +40,7 @@ const Contact = () => {
           <p className={titleClasses.join(" ")}>FIND US</p>
           <div className={textClasses.join(" ")}>
             <p>104 Diamond Block, Top Floor,</p>
-            <p>Burj Khalifah, B9 BE8</p>
+            <p>White Gold Tower, B9 BE8</p>
           </div>
           <hr className={hrClasses.join(" ")} />
           <p className={titleClasses.join(" ")}>RESERVATION</p>

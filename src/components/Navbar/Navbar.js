@@ -6,17 +6,24 @@ import NavigationItems from "./NavigationItems/NavigationItems";
 import Socials from "../Socials/Socials";
 import ActionButton from "./ActionButton/ActionButton";
 
-const navbar = () => {
+const Navbar = (props) => {
   let navigationItems = ["menu", "gym", "about", "gallery", "contact"];
+
+  const onReserveModalOpen = () => {
+    props.onReserveModalOpen();
+  };
 
   return (
     <div className={classes.Navbar}>
       <Logo />
       <NavigationItems items={navigationItems} />
       <Socials />
-      <ActionButton text="RESERVE A SEAT" />
+      <ActionButton
+        text="RESERVE A SEAT"
+        onReserveModalOpen={onReserveModalOpen}
+      />
     </div>
   );
 };
 
-export default navbar;
+export default Navbar;

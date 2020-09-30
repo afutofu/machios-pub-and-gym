@@ -33,7 +33,7 @@ const Gym = () => {
     let textClasses = [];
 
     if (onScreen) {
-      hrClasses.push(classes.SlideIn);
+      hrClasses.push(classes.ScaleOut);
       titleClasses.push(classes.FadeIn);
       textClasses.push(classes.SlideFadeIn);
     }

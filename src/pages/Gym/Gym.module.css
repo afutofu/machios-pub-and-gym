@@ -10,7 +10,7 @@
   height: 100%;
   box-sizing: border-box;
   padding: 0 100px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Quicksand", Helvetica, sans-serif;
   font-size: 1.2rem;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .Container .Close p {
-  line-height: 1.6rem;
+  line-height: 2rem;
 }
 
 .Container .Close {
@@ -49,9 +49,9 @@
   text-align: center;
 }
 
-.Gym hr {
+.Gym .Container hr {
   border-top: 2px solid black;
-  transform: translateX(-150%);
+  transform: scaleX(0);
 }
 
 div.GymContent p,
@@ -69,6 +69,10 @@ h3 {
 
 .SlideFadeIn {
   animation: slideFadeIn 1s 0s ease forwards;
+}
+
+.ScaleOut {
+  animation: scaleOut 1s 0s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -97,5 +101,14 @@ h3 {
   to {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
   }
 }
