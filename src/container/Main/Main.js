@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import classes from "./Main.module.css";
 
@@ -13,6 +13,10 @@ import Contact from "../../pages/Contact/Contact";
 
 const Main = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 
   const onReserveModalOpen = () => {
     setIsModalOpen(true);

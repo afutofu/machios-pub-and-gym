@@ -3,11 +3,7 @@ import React from "react";
 import Main from "./container/Main/Main";
 
 const app = () => {
-  return (
-    <React.Fragment>
-      <Main />
-    </React.Fragment>
-  );
+  return <Main />;
 };
 
 export default app;

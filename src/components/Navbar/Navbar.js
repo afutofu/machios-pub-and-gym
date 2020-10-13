@@ -13,6 +13,20 @@ const Navbar = (props) => {
 
   let navigationItems = ["menu", "gym", "about", "gallery", "contact"];
 
+  const getWidth = () => {
+    if (window.innerWidth) {
+      return window.innerWidth;
+    }
+
+    if (document.documentElement && document.documentElement.clientWidth) {
+      return document.documentElement.clientWidth;
+    }
+
+    if (document.body) {
+      return document.body.clientWidth;
+    }
+  };
+
   const onReserveModalOpen = () => {
     props.onReserveModalOpen();
   };
@@ -21,7 +35,9 @@ const Navbar = (props) => {
     if (isNavOpen) {
       setIsNavOpen(false);
     } else {
-      setIsNavOpen(true);
+      if (getWidth() < 992) {
+        setIsNavOpen(true);
+      }
     }
   };
 
@@ -55,7 +71,7 @@ const Navbar = (props) => {
           />
         </div>
         <div className={classes.Navbar}>
-          <HamburgerIcon onClick={onToggleDropDown} />
+          {getWidth() < 992 && <HamburgerIcon onClick={onToggleDropDown} />}
           <Logo onNavClose={onNavClose} />
           <NavigationItems
             items={navigationItems}

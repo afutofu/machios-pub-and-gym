@@ -17,6 +17,7 @@ const ReservationModal = (props) => {
   };
 
   const onModalClose = () => {
+    setEmail("");
     props.onReserveModalClose();
   };
 
