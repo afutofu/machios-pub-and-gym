@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 import classes from "./HamburgerIcon.module.css";
 
 const HamburgerIcon = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   const onIconClick = () => {
     props.onClick();
   };

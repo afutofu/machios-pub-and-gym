@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 
 import classes from "./Contact.module.css";
 
-import SectionHeader from "../../components/SectionHeader/SectionHeader";
-
 const Contact = () => {
   const myRef = useRef(null);
 
