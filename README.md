@@ -6,7 +6,7 @@ A website for "Machio's Pub and Gym", highlighting the menu, gym facilities, and
 
 Technologies used:
 
-- [React](https://reactjs.org/)
+- [React](https://reactjs.org/) - Frontend framework
 
 Features in this version:
 
