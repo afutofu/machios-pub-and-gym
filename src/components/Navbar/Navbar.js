@@ -34,11 +34,15 @@ const Navbar = (props) => {
 
   const onToggleDropDown = () => {
     if (isNavOpen) {
+      enableBodyScroll(document.querySelector("#root"));
       enableBodyScroll(document.querySelector("body"));
+      enableBodyScroll(document.querySelector("html"));
       setIsNavOpen(false);
     } else {
       if (getWidth() < 992) {
+        disableBodyScroll(document.querySelector("#root"));
         disableBodyScroll(document.querySelector("body"));
+        disableBodyScroll(document.querySelector("html"));
         setIsNavOpen(true);
       }
     }
