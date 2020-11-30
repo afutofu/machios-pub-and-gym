@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 import classes from "./Navbar.module.css";
 import Logo from "../Logo/Logo";
@@ -33,9 +34,11 @@ const Navbar = (props) => {
 
   const onToggleDropDown = () => {
     if (isNavOpen) {
+      enableBodyScroll(document.querySelector("body"));
       setIsNavOpen(false);
     } else {
       if (getWidth() < 992) {
+        disableBodyScroll(document.querySelector("body"));
         setIsNavOpen(true);
       }
     }
