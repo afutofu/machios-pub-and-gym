@@ -9,7 +9,7 @@
   box-sizing: border-box;
   opacity: 0;
   transition: 0.5s;
-  pointer-events: none;
+  /* pointer-events: none; */
   animation: fadeIn 2s 2s ease forwards, enable 0s 4s ease forwards;
 }
 
@@ -29,11 +29,11 @@
   }
 }
 
-@keyframes enable {
+/* @keyframes enable {
   from {
     pointer-events: none;
   }
   to {
-    pointer-events: visible;
+    pointer-events: auto;
   }
-}
+} */

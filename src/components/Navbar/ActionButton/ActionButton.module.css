@@ -15,7 +15,7 @@
   text-decoration: none;
   color: black;
   transform: translateY(100%);
-  pointer-events: none;
+  /* pointer-events: none; */
   animation: jumpIn 1s 2.5s ease forwards, enable 0s 4s ease forwards;
   transition: 0.5s;
   cursor: pointer;
@@ -36,14 +36,14 @@
   }
 }
 
-@keyframes enable {
+/* @keyframes enable {
   from {
     pointer-events: none;
   }
   to {
-    pointer-events: visible;
+    pointer-events: auto;
   }
-}
+} */
 
 @keyframes easeOutBounce {
   0% {
