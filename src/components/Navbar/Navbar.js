@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 import classes from "./Navbar.module.css";
@@ -11,6 +11,13 @@ import HamburgerIcon from "./HamburgerIcon/HamburgerIcon";
 let firstClick = true;
 const Navbar = (props) => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setWidth(window.innerWidth);
+    });
+  }, []);
 
   let navigationItems = ["menu", "gym", "about", "gallery", "contact"];
 
@@ -64,19 +71,30 @@ const Navbar = (props) => {
       }
     }
 
+    console.log(width);
+
+    if (width < 992) {
+      return (
+        <div className={navClasses.join(" ")}>
+          <div className={classes.Container}>
+            <HamburgerIcon onClick={onToggleDropDown} />
+            <Logo />
+            <NavigationItems
+              items={navigationItems}
+              onNavClose={onToggleDropDown}
+            />
+            <Socials />
+            <ActionButton
+              text="RESERVE A SEAT"
+              onReserveModalOpen={onReserveModalOpen}
+            />
+          </div>
+        </div>
+      );
+    }
+
     return (
       <>
-        <div className={navClasses.join(" ")}>
-          <NavigationItems
-            items={navigationItems}
-            onNavClose={onToggleDropDown}
-          />
-          <Socials />
-          <ActionButton
-            text="RESERVE A SEAT"
-            onReserveModalOpen={onReserveModalOpen}
-          />
-        </div>
         <div className={classes.Navbar}>
           {getWidth() < 992 && <HamburgerIcon onClick={onToggleDropDown} />}
           <Logo onNavClose={onNavClose} />

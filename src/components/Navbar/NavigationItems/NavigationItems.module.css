@@ -12,6 +12,6 @@
 @media only screen and (max-width: 992px) {
   .NavigationItems {
     padding-top: 100px;
-    height: 45vh;
+    min-height: 47vh;
   }
 }
