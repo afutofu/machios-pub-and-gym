@@ -52,6 +52,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .Title {
+    font-size: 1.5rem;
+  }
+}
+
 @media only screen and (max-width: 992px) {
   .Title {
     display: flex;

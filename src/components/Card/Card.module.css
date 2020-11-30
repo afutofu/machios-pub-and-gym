@@ -81,3 +81,13 @@
     font-size: 14px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .Title {
+    font-size: 13px;
+  }
+
+  .Desc {
+    font-size: 12px;
+  }
+}

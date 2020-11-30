@@ -9,7 +9,7 @@ const SectionHeader = (props) => {
 
   useEffect(() => {
     setInterval(() => {
-      if(myRef.current){
+      if (myRef.current) {
         const top = myRef.current.getBoundingClientRect().top;
         if (top < window.screen.height * 0.8) {
           setOnScreen(true);
@@ -23,6 +23,13 @@ const SectionHeader = (props) => {
   const renderContent = () => {
     let sectionHeaderClasses = [classes.SectionHeader, classes.SlideOut];
     let textClasses = [];
+
+    if (props.title === "gym") {
+      sectionHeaderClasses = [
+        classes.SectionHeaderLessPadding,
+        classes.SlideOut,
+      ];
+    }
 
     sectionHeaderClasses.pop();
     textClasses.pop();
