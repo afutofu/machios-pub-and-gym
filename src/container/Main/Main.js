@@ -27,23 +27,21 @@ const Main = () => {
   };
 
   return (
-    <>
+    <div className={classes.Main}>
       <Navbar onReserveModalOpen={onReserveModalOpen} />
-      <div className={classes.Main}>
-        <ReservationModal
-          isOpen={isModalOpen}
-          onReserveModalClose={onReserveModalClose}
-        />
-        <ImageSlider />
-        <div className={classes.Margin}>
-          <Menu />
-          <Gym />
-          <About />
-          <Gallery />
-          <Contact />
-        </div>
+      <ReservationModal
+        isOpen={isModalOpen}
+        onReserveModalClose={onReserveModalClose}
+      />
+      <ImageSlider />
+      <div className={classes.Margin}>
+        <Menu />
+        <Gym />
+        <About />
+        <Gallery />
+        <Contact />
       </div>
-    </>
+    </div>
   );
 };
 
